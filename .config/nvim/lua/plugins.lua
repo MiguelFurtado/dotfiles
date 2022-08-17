@@ -58,9 +58,6 @@ return require('packer').startup(function(use)
       requires = "kyazdani42/nvim-web-devicons",
     }
 
-    -- better javascript syntax highlighting
-    use 'pangloss/vim-javascript'
-
     -- themes
     use {
         'luisiacc/gruvbox-baby',

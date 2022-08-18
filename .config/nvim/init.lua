@@ -45,7 +45,8 @@ A.nvim_create_autocmd({ "BufEnter" }, {
 })
 
 
--- Setup nvim-cmp.
+-- Setup lsp auto-complete
+-- ===================================================================
 vim.opt.completeopt = {"menu","menuone","noselect"}
 
 local cmp = require('cmp')
@@ -84,9 +85,11 @@ sources = cmp.config.sources({
   { name = 'buffer' },
 })
 })
+-- ===================================================================
+-- Done setting up lsp auto-complete
 
 
--- hide default mode
+-- hide default mode indicator because I'm using lualine
 vim.opt.showmode = false
 
 require('lualine').setup {
@@ -121,3 +124,9 @@ require('lualine').setup {
   },
 }
 
+require('telescope').setup{
+    defaults = {
+        prompt_prefix = "> ",
+        wrap_results = true
+    }
+}

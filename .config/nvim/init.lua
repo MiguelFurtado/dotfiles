@@ -10,6 +10,7 @@ local keybinds = require('keybinds')
 require('lsp')
 
 
+-- theme
 cmd[[colorscheme NeoSolarized]]
 -- o.background=dark
 
@@ -24,6 +25,7 @@ wo.wrap = false
 o.spell = true
 o.mouse = "a" --enable mouse cursor
 
+-- tabs
 o.tabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
@@ -92,6 +94,7 @@ sources = cmp.config.sources({
 -- hide default mode indicator because I'm using lualine
 vim.opt.showmode = false
 
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -126,8 +129,7 @@ require('lualine').setup {
 
 require('telescope').setup{
     defaults = {
-        file_ignore_patterns = {".git"},
+        file_ignore_patterns = {".git/"},
         prompt_prefix = "> ",
-        wrap_results = true
     }
 }

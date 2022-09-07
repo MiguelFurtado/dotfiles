@@ -10,7 +10,7 @@ function keybinds.set_general_keybinds()
     map('n', '<leader>dg', "<cmd>:Telescope diagnostics<CR>")
     map('n', '<leader>B', "<cmd>lua vim.cmd('NERDTreeToggle')<CR>")
     map('n', '<leader>w', "<cmd>lua vim.cmd('w')<CR>")
-    map('n', '<leader>D', "<cmd>lua vim.diagnostic.open_float()<CR>")
+    map('n', '<leader>e', "<cmd>lua vim.diagnostic.open_float()<CR>")
 end
 
 

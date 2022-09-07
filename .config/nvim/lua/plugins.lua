@@ -62,6 +62,7 @@ return require('packer').startup(function(use)
         branch = 'main'
     }
     use 'Mofiqul/vscode.nvim'
+    use 'tamelion/neovim-molokai'
 end)
 end
 

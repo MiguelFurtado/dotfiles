@@ -17,6 +17,8 @@ return require('packer').startup(function(use)
     -- highlights yanked region
     use 'machakann/vim-highlightedyank'
 
+
+    -- nerdtree
     use 'preservim/nerdtree'
 
     use 'ryanoasis/vim-devicons'
@@ -59,7 +61,9 @@ return require('packer').startup(function(use)
         'luisiacc/gruvbox-baby',
         branch = 'main'
     }
+    use 'Mofiqul/vscode.nvim'
 end)
 end
 
 return plugins
+

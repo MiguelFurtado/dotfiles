@@ -82,6 +82,16 @@ sources = cmp.config.sources({
 -- ===================================================================
 -- Done setting up lsp auto-complete
 
+-- Autopairs
+local npairs = require("nvim-autopairs")
+
+npairs.setup({
+    check_ts = true,
+    disable_filetype = { "TelescopePrompt" },
+    -- do not trigger if a close pair is on the same line
+    enable_check_bracket_line = false,
+})
+
 
 -- hide default mode indicator because I'm using lualine
 vim.opt.showmode = false

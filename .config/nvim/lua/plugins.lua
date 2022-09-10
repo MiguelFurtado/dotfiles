@@ -64,6 +64,7 @@ return require('packer').startup(function(use)
     use 'Mofiqul/vscode.nvim'
     use 'tamelion/neovim-molokai'
     use 'sainnhe/sonokai'
+    use 'kyazdani42/nvim-web-devicons'
 end)
 end
 

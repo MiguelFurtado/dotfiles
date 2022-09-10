@@ -10,29 +10,24 @@ local keybinds = require('keybinds')
 require('lsp')
 
 
--- theme
-
+-- theme setup
 cmd[[colorscheme sonokai]]
---o.background=dark
-
+o.termguicolors = true
 
 keybinds.set_general_keybinds()
 
 o.number = true
 o.relativenumber = true
---o.laststatus =  -- hide status line
 o.cul = true -- highlight current line
 wo.wrap = false
 o.spell = true
 o.mouse = "a" --enable mouse cursor
 
--- tabs
+-- insert spaces for tabs like any civilized dev
 o.tabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
 
--- fix base16 weird colors
-o.termguicolors = true
 o.encoding = 'UTF-8'
 
 -- remove trailing spaces on save
@@ -60,10 +55,6 @@ snippet = {
   expand = function(args)
     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
   end,
-},
-window = {
-  -- completion = cmp.config.window.bordered(),
-  -- documentation = cmp.config.window.bordered(),
 },
 mapping = cmp.mapping.preset.insert({
   ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -118,14 +109,6 @@ require('lualine').setup {
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
 }
 
 require('telescope').setup{
@@ -137,19 +120,7 @@ require('telescope').setup{
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = {
-      "rust",
-      "python",
-      "javascript",
-      "typescript",
-      "sql",
-      "lua",
-      "toml",
-      "dockerfile",
-      "json",
-      "yaml",
-      "html"
-  },
+  ensure_installed = "all",
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

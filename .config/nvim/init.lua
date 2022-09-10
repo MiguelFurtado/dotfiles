@@ -11,7 +11,7 @@ require('lsp')
 
 
 -- theme setup
-cmd[[colorscheme sonokai]]
+cmd[[colorscheme base16-default-dark]]
 o.termguicolors = true
 
 keybinds.set_general_keybinds()

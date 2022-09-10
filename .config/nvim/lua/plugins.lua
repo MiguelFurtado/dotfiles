@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use 'kyazdani42/nvim-web-devicons'
 
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
@@ -57,14 +58,11 @@ return require('packer').startup(function(use)
     }
 
     -- themes
-    use {
-        'luisiacc/gruvbox-baby',
-        branch = 'main'
-    }
     use 'Mofiqul/vscode.nvim'
     use 'tamelion/neovim-molokai'
     use 'sainnhe/sonokai'
-    use 'kyazdani42/nvim-web-devicons'
+    use 'chriskempson/base16-vim'
+
 end)
 end
 

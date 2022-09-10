@@ -20,12 +20,11 @@ return require('packer').startup(function(use)
 
     -- nerdtree
     use 'preservim/nerdtree'
-
     use 'ryanoasis/vim-devicons'
-
     use 'Xuyuanp/nerdtree-git-plugin'
-
     use 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+    -- treesitter provides better syntax highlight
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -63,7 +62,6 @@ return require('packer').startup(function(use)
     use 'tamelion/neovim-molokai'
     use 'sainnhe/sonokai'
     use 'chriskempson/base16-vim'
-
 end)
 end
 

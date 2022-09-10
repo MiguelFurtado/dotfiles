@@ -6,15 +6,14 @@ local cmd = vim.cmd
 g.mapleader = ','
 
 require('plugins').load()
-local keybinds = require('keybinds')
 require('lsp')
+require('keybinds').set_general_keybinds()
 
 
 -- theme setup
 cmd[[colorscheme base16-default-dark]]
 o.termguicolors = true
 
-keybinds.set_general_keybinds()
 
 o.number = true
 o.relativenumber = true

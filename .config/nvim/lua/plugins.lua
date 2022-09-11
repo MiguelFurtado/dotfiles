@@ -62,6 +62,7 @@ return require('packer').startup(function(use)
     use 'tamelion/neovim-molokai'
     use 'sainnhe/sonokai'
     use 'chriskempson/base16-vim'
+    use 'folke/tokyonight.nvim'
 end)
 end
 

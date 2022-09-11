@@ -11,7 +11,8 @@ require('keybinds').set_general_keybinds()
 
 
 -- theme setup
-cmd[[colorscheme base16-default-dark]]
+-- cmd[[colorscheme base16-default-dark]]
+cmd[[colorscheme tokyonight-night]]
 o.termguicolors = true
 
 

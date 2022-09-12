@@ -17,10 +17,10 @@ o.termguicolors = true
 
 
 o.number = true
-o.relativenumber = true
+--o.relativenumber = true
 o.cul = true -- highlight current line
 wo.wrap = false
-o.spell = true
+o.spell = false
 o.mouse = "a" --enable mouse cursor
 
 -- insert spaces for tabs like any civilized dev

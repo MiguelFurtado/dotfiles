@@ -17,7 +17,7 @@ o.termguicolors = true
 
 
 o.number = true
---o.relativenumber = true
+o.relativenumber = true
 o.cul = true -- highlight current line
 wo.wrap = false
 o.spell = false

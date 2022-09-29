@@ -9,12 +9,9 @@ require('plugins').load()
 require('lsp')
 require('keybinds').set_general_keybinds()
 
-
 -- theme setup
--- cmd[[colorscheme base16-default-dark]]
 cmd[[colorscheme tokyonight-night]]
 o.termguicolors = true
-
 
 o.number = true
 o.relativenumber = true
@@ -84,14 +81,12 @@ sources = cmp.config.sources({
 
 -- Autopairs
 local npairs = require("nvim-autopairs")
-
 npairs.setup({
     check_ts = true,
     disable_filetype = { "TelescopePrompt" },
     -- do not trigger if a close pair is on the same line
     enable_check_bracket_line = false,
 })
-
 
 -- hide default mode indicator because I'm using lualine
 vim.opt.showmode = false

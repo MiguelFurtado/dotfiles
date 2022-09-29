@@ -17,7 +17,6 @@ return require('packer').startup(function(use)
     -- highlights yanked region
     use 'machakann/vim-highlightedyank'
 
-
     -- nerdtree
     use 'preservim/nerdtree'
     use 'ryanoasis/vim-devicons'
@@ -38,8 +37,8 @@ return require('packer').startup(function(use)
     }
     use 'kyazdani42/nvim-web-devicons'
 
+    -- ===================== lsp =====================
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-
     -- lsp auto-completion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -47,10 +46,12 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    -- auto-close pairs
+    use 'windwp/nvim-autopairs'
+    -- ===============================================
 
     -- use 'simrat39/symbols-outline.nvim'
 
-    use 'windwp/nvim-autopairs'
 
     use {
         'nvim-lualine/lualine.nvim',

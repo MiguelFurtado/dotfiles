@@ -32,3 +32,9 @@ lspconfig["tsserver"].setup {
     end
 }
 
+lspconfig["html"].setup {
+    capabilities=capabilities,
+    on_attach = function()
+        keybinds.set_lsp_keybinds()
+    end
+}

@@ -3,7 +3,7 @@ local wo = vim.wo
 local g = vim.g
 local A = vim.api
 local cmd = vim.cmd
-g.mapleader = ','
+g.mapleader = ' '
 
 require('plugins').load()
 require('lsp')

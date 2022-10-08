@@ -64,6 +64,15 @@ return require('packer').startup(function(use)
     use 'sainnhe/sonokai'
     use 'chriskempson/base16-vim'
     use 'folke/tokyonight.nvim'
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+            vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+            require("catppuccin").setup()
+            vim.api.nvim_command "colorscheme macchiato"
+        end
+    }
 end)
 end
 

@@ -10,7 +10,7 @@ require('lsp')
 require('keybinds').set_general_keybinds()
 
 -- theme setup
-cmd[[colorscheme tokyonight-night]]
+cmd[[colorscheme catppuccin]]
 o.termguicolors = true
 
 o.number = true

@@ -1,0 +1,42 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+#import:
+#  - ~/.config/alacritty/theme.yml
+#shell:
+#  program: /bin/zsh
+#
+# Automatically launch tmux with the last session
+#  args:
+#    - -l
+#    - -c
+#    - "tmux attach || tmux"
+live_config_reload: true
+
+window:
+  dimensions:
+    columns: 95
+    lines: 32
+    x: 650
+    y: 100
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+  # Scrolling distance multiplier.
+  #multiplier: 3
+
+# Font configuration
+font:
+  size: 15.0
+
+cursor:
+  style:
+    shape: Block
+    blinking: on
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+
+import:
+  - ~/.config/alacritty/themes/Ayu-Mirage.yml

@@ -32,7 +32,7 @@ font:
 
 cursor:
   style:
-    shape: Block
+    shape: Underline
     blinking: on
 
 key_bindings:

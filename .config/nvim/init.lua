@@ -65,6 +65,7 @@ sources = cmp.config.sources({
   { name = 'luasnip' }, -- For luasnip users.
 }, {
   { name = 'buffer' },
+  { name = 'path' },
 })
 })
 

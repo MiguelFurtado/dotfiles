@@ -1,8 +1,5 @@
 local plugins = {}
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
-
 function plugins.load()
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -51,7 +48,6 @@ return require('packer').startup(function(use)
     -- ===============================================
 
     -- use 'simrat39/symbols-outline.nvim'
-
 
     use {
         'nvim-lualine/lualine.nvim',

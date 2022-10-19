@@ -34,18 +34,19 @@ return require('packer').startup(function(use)
     }
     use 'kyazdani42/nvim-web-devicons'
 
-    -- ===================== lsp =====================
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+    --
     -- lsp auto-completion
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/nvim-cmp'
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
+    use 'hrsh7th/nvim-cmp' -- the completion engine
+    use 'hrsh7th/cmp-buffer' -- words from the curr buffer
+    use 'hrsh7th/cmp-path' -- path auto-completion
+    use 'hrsh7th/cmp-nvim-lsp' -- lsp
+    use 'hrsh7th/cmp-nvim-lua' -- nvim lua api
+    use 'L3MON4D3/LuaSnip' -- snippets engine
+    use 'saadparwaiz1/cmp_luasnip' -- the luasnip driver for cmp
+
     -- auto-close pairs
     use 'windwp/nvim-autopairs'
-    -- ===============================================
 
     -- use 'simrat39/symbols-outline.nvim'
 

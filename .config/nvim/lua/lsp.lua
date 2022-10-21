@@ -42,9 +42,7 @@ lspconfig["html"].setup {
 -- Setup auto-complete
 -- ===================================================================
 vim.opt.completeopt = {"menu","menuone","noselect"}
-
 local cmp = require('cmp')
-
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -82,13 +80,4 @@ sources = cmp.config.sources({
 })
 -- ===================================================================
 -- Done setting up lsp auto-complete
-
--- Autopairs
-local npairs = require("nvim-autopairs")
-npairs.setup({
-    check_ts = true,
-    disable_filetype = { "TelescopePrompt" },
-    -- do not trigger if a close pair is on the same line
-    enable_check_bracket_line = false,
-})
 

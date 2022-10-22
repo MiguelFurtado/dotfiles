@@ -19,6 +19,7 @@ o.cul = true -- highlight current line
 wo.wrap = false
 o.spell = false
 o.mouse = "a" --enable mouse cursor
+o.smartindent = true
 
 -- insert spaces for tabs like any civilized dev
 o.tabstop = 4

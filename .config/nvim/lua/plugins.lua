@@ -14,12 +14,6 @@ return require('packer').startup(function(use)
     -- highlights yanked region
     use 'machakann/vim-highlightedyank'
 
-    -- nerdtree
-    use 'preservim/nerdtree'
-    use 'ryanoasis/vim-devicons'
-    use 'Xuyuanp/nerdtree-git-plugin'
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
-
     -- treesitter provides better syntax highlight
     use {
         'nvim-treesitter/nvim-treesitter',

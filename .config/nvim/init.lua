@@ -8,6 +8,7 @@ g.mapleader = ' '
 require('plugins').load()
 require('lsp')
 require('keybinds').set_general_keybinds()
+require('debugging').setup()
 
 -- theme setup
 cmd[[colorscheme catppuccin]]

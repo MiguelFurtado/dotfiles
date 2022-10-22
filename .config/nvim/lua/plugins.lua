@@ -49,6 +49,12 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- debugging
+    use 'mfussenegger/nvim-dap'
+    use "rcarriga/nvim-dap-ui"
+    use 'theHamsta/nvim-dap-virtual-text' -- inline values
+    use 'mfussenegger/nvim-dap-python'
+
     -- themes
     use 'Mofiqul/vscode.nvim'
     use 'tamelion/neovim-molokai'

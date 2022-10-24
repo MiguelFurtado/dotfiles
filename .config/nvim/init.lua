@@ -22,6 +22,11 @@ o.spell = false
 o.mouse = "a" --enable mouse cursor
 o.smartindent = true
 
+-- hide default mode indicator because I'm using lualine
+vim.opt.showmode = false
+-- global status line
+vim.opt.laststatus = 3
+
 -- insert spaces for tabs like any civilized dev
 o.tabstop = 4
 o.shiftwidth = 4
@@ -41,10 +46,6 @@ A.nvim_create_autocmd({ "BufEnter" }, {
   command = [[if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif]]
 })
 
--- hide default mode indicator because I'm using lualine
-vim.opt.showmode = false
-
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -52,7 +53,7 @@ require('lualine').setup {
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     always_divide_middle = true,
-    globalstatus = false,
+    globalstatus = true,
     refresh = {
       statusline = 1000,
       tabline = 1000,

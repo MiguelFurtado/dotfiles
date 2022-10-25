@@ -70,12 +70,14 @@ require('lualine').setup {
   },
 }
 
-require('telescope').setup{
+local telescope = require('telescope')
+telescope.setup{
     defaults = {
         file_ignore_patterns = {".git/"},
-        prompt_prefix = "> ",
+        prompt_prefix = "→ ",
     }
 }
+telescope.load_extension('fzf')
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"

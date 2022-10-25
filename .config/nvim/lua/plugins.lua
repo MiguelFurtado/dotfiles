@@ -39,10 +39,7 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip' -- snippets engine
     use 'saadparwaiz1/cmp_luasnip' -- the luasnip driver for cmp
 
-    -- auto-close pairs
-    use 'windwp/nvim-autopairs'
-
-    -- use 'simrat39/symbols-outline.nvim'
+    use 'windwp/nvim-autopairs' -- auto-close pairs
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -57,9 +54,6 @@ return require('packer').startup(function(use)
 
     -- themes
     use 'Mofiqul/vscode.nvim'
-    use 'tamelion/neovim-molokai'
-    use 'sainnhe/sonokai'
-    use 'chriskempson/base16-vim'
     use 'folke/tokyonight.nvim'
     use {
         "catppuccin/nvim",

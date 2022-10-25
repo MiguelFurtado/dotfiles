@@ -17,6 +17,7 @@ o.termguicolors = true
 o.number = true
 o.relativenumber = true
 o.cul = true -- highlight current line
+o.hlsearch=false
 wo.wrap = false
 o.spell = false
 o.mouse = "a" --enable mouse cursor

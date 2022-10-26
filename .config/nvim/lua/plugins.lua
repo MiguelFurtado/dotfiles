@@ -46,6 +46,13 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- proper tabs
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v3.*",
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
+
     -- debugging
     use 'mfussenegger/nvim-dap'
     use "rcarriga/nvim-dap-ui"

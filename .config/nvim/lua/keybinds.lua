@@ -31,7 +31,7 @@ function keybinds.set_lsp_keybinds()
     -- `buffer 0` means whatever the current buffer is so the shortcuts only
     -- work on files that trigger the lsp
     map("n", "K", vim.lsp.buf.hover, {buffer = 0})
-    map("n", "<leader>d", vim.lsp.buf.definition, {buffer = 0})
+    map("n", "<leader>D", vim.lsp.buf.definition, {buffer = 0})
     map("n", "<leader>t", vim.lsp.buf.type_definition, {buffer = 0})
     map("n", "<leader>i", vim.lsp.buf.implementation, {buffer = 0})
     map("n", "<leader>dj", vim.diagnostic.goto_next, {buffer = 0})

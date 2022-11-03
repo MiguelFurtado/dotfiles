@@ -1,8 +1,6 @@
 # custom env variables
 export PATH=$HOME/.local/bin:$PATH \
     EDITOR="nvim" \
-    # add cargo binaries to path
-    PATH=$HOME/.cargo/bin:$PATH
 
 # rootless docker
 export PATH=$HOME/bin:$PATH
@@ -25,4 +23,9 @@ source ~/.zsh/aliases.zsh
 
 # enable vim mode
 bindkey -v
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 

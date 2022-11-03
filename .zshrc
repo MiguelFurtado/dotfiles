@@ -6,6 +6,10 @@ export PATH=$HOME/.local/bin:$PATH \
 export PATH=$HOME/bin:$PATH
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
+# some colour plz
+alias ls='ls --color=auto'
+alias grep='grep --color'
+
 # Enale history
 SAVEHIST=1000  # Save most-recent 1000 lines
 HISTFILE=~/.local/share/.zsh_history

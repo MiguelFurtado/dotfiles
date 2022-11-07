@@ -11,8 +11,6 @@ require('keybinds').set_general_keybinds()
 require('debugging').setup()
 
 
---o.background = require('util').get_sys_theme_pref()
-
 -- theme setup
 require("tokyonight").setup({
   style = "night",

@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
             vim.api.nvim_command "colorscheme macchiato"
         end
     }
+    use 'vimpostor/vim-lumen'
 end)
 end
 

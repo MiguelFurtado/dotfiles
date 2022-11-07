@@ -10,8 +10,18 @@ require('lsp')
 require('keybinds').set_general_keybinds()
 require('debugging').setup()
 
+
+--o.background = require('util').get_sys_theme_pref()
+
 -- theme setup
-cmd[[colorscheme catppuccin]]
+require("tokyonight").setup({
+  style = "night",
+  on_colors = function(colors)
+    colors.comment = "#818ab3"
+  end
+})
+
+cmd[[colorscheme tokyonight]]
 o.termguicolors = true
 
 o.number = true
@@ -36,14 +46,14 @@ o.expandtab = true
 o.encoding = 'UTF-8'
 
 -- remove trailing spaces on save
-A.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
+A.nvim_create_autocmd({ 'BufWritePre' }, {
+  pattern = { '*' },
   command = [[%s/\s\+$//e]],
 })
 
 -- Exit Vim if NERDTree is the only window remaining in the only tab.
-A.nvim_create_autocmd({ "BufEnter" }, {
-  pattern = { "*" },
+A.nvim_create_autocmd({ 'BufEnter' }, {
+  pattern = { '*' },
   command = [[if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif]]
 })
 
@@ -74,8 +84,8 @@ require('lualine').setup {
 local telescope = require('telescope')
 telescope.setup{
     defaults = {
-        file_ignore_patterns = {".git/"},
-        prompt_prefix = "→ ",
+        file_ignore_patterns = {'.git/', 'lib', 'bin', '__pycache__'},
+        prompt_prefix = '→ ',
     }
 }
 telescope.load_extension('fzf')
@@ -100,19 +110,20 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Autopairs
-require("nvim-autopairs").setup({
+require('nvim-autopairs').setup({
     check_ts = true,
-    disable_filetype = { "TelescopePrompt" },
+    disable_filetype = { 'TelescopePrompt' },
     -- do not trigger if a close pair is on the same line
     enable_check_bracket_line = false,
 })
 
 require('bufferline').setup {
     options = {
-        mode = "tabs",
+        mode = 'tabs',
+        numbers = 'ordinal',
         always_show_bufferline = false,
         max_name_length = 18,
-        diagnostics = "nvim_lsp",
+        diagnostics = 'nvim_lsp',
         diagnostics_update_in_insert = false,
         diagnostics_indicator = function(_, level, _, _)
             local icon = level:match('error') and '' or ''
@@ -121,7 +132,7 @@ require('bufferline').setup {
         show_buffer_icons = true, -- disable filetype icons for buffers
         show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
         show_close_icon = false,
-        separator_style = "slant",
+        separator_style = 'slant',
         enforce_regular_tabs = true,
     }
 }

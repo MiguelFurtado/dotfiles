@@ -12,10 +12,11 @@ require('debugging').setup()
 
 
 -- theme setup
-require("tokyonight").setup({
-  style = "night",
+require('tokyonight').setup({
+  style = 'night',
   on_colors = function(colors)
-    colors.comment = "#818ab3"
+    colors.comment = '#818ab3'
+    colors.fg_gutter = '#6d7497'
   end
 })
 

@@ -11,8 +11,10 @@ alias ls='ls --color=auto'
 alias grep='grep --color'
 
 # Enale history
-SAVEHIST=1000  # Save most-recent 1000 lines
-HISTFILE=~/.local/share/.zsh_history
+HISTFILE=~/.local/share/zsh_history
+SAVEHIST=100000
+HISTFILESIZE=100000
+HISTSIZE=100000
 
 # Enable zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

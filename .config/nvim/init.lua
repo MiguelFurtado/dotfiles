@@ -87,6 +87,7 @@ telescope.setup{
     }
 }
 telescope.load_extension('fzf')
+telescope.load_extension("file_browser")
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"

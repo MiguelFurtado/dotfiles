@@ -39,6 +39,20 @@ lspconfig["html"].setup {
     end
 }
 
+lspconfig["cssls"].setup {
+    capabilities=capabilities,
+    on_attach = function()
+        keybinds.set_lsp_keybinds()
+    end
+}
+
+lspconfig["jsonls"].setup {
+    capabilities=capabilities,
+    on_attach = function()
+        keybinds.set_lsp_keybinds()
+    end
+}
+
 -- Setup auto-complete
 -- ===================================================================
 vim.opt.completeopt = {"menu","menuone","noselect"}

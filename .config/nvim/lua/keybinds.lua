@@ -8,7 +8,7 @@ end
 function keybinds.set_general_keybinds()
     map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files({hidden=true})<CR>")
     map('n', '<leader>dg', "<cmd>:Telescope diagnostics<CR>")
-    map('n', '<leader>fg', "<cmd>:Telescope live_grep<CR>")
+    map('n', '<leader>gg', "<cmd>:Telescope live_grep<CR>")
     map('n', '<leader>E', ":Ex<CR>")
     map('n', '<leader>fe', ":Telescope file_browser<CR>")
     map('n', '<leader>w', "<cmd>lua vim.cmd('w')<CR>")

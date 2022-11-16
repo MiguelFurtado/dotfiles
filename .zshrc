@@ -1,6 +1,6 @@
 # custom env variables
 export PATH=$HOME/.local/bin:$PATH \
-    EDITOR="nvim" \
+    EDITOR="nvim"
 
 # rootless docker
 export PATH=$HOME/bin:$PATH
@@ -37,3 +37,5 @@ bindkey -v
 
 # asdf
 . $HOME/.asdf/asdf.sh
+
+. ~/.zsh/completion.zsh

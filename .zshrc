@@ -39,3 +39,5 @@ bindkey -v
 . $HOME/.asdf/asdf.sh
 
 . ~/.zsh/completion.zsh
+
+eval "$(starship init zsh)"

@@ -24,11 +24,6 @@ setopt share_history          # share command history data betwenn sessions
 # Enable zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# set the prompt
-setopt PROMPT_SUBST
-autoload -U colors && colors
-source ~/.zsh/prompt.zsh
-
 # Load aliases
 source ~/.zsh/aliases.zsh
 
@@ -40,4 +35,6 @@ bindkey -v
 
 . ~/.zsh/completion.zsh
 
+# starship prompt
 eval "$(starship init zsh)"
+

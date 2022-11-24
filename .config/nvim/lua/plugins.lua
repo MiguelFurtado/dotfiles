@@ -60,6 +60,9 @@ return require('packer').startup(function(use)
     use 'theHamsta/nvim-dap-virtual-text' -- inline values
     use 'mfussenegger/nvim-dap-python'
 
+    -- netrw icons
+    use 'prichrd/netrw.nvim'
+
     -- themes
     use 'Mofiqul/vscode.nvim'
     use 'folke/tokyonight.nvim'
@@ -72,7 +75,7 @@ return require('packer').startup(function(use)
             vim.api.nvim_command "colorscheme macchiato"
         end
     }
-    use 'vimpostor/vim-lumen'
+    use 'vimpostor/vim-lumen' -- auto dark mode
 end)
 end
 

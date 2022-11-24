@@ -132,3 +132,5 @@ require('bufferline').setup {
     }
 }
 
+require'netrw'.setup{}
+

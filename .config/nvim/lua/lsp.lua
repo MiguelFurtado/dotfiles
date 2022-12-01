@@ -1,52 +1,52 @@
-local keybinds = require("keybinds")
+local keybinds = require('keybinds')
 local capabilities = require('cmp_nvim_lsp')
     .default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local lspconfig = require("lspconfig")
+local lspconfig = require('lspconfig')
 
-lspconfig["rust_analyzer"].setup {
+lspconfig['rust_analyzer'].setup {
     capabilities=capabilities,
     on_attach = function()
         keybinds.set_lsp_keybinds()
     end
 }
 
-lspconfig["pyright"].setup {
+lspconfig['pyright'].setup {
     capabilities=capabilities,
     on_attach = function()
         keybinds.set_lsp_keybinds()
     end
 }
 
-lspconfig["dockerls"].setup {
+lspconfig['dockerls'].setup {
     capabilities=capabilities,
     on_attach = function()
         keybinds.set_lsp_keybinds()
     end
 }
 
-lspconfig["tsserver"].setup {
+lspconfig['tsserver'].setup {
     capabilities=capabilities,
     on_attach = function()
         keybinds.set_lsp_keybinds()
     end
 }
 
-lspconfig["html"].setup {
+lspconfig['html'].setup {
     capabilities=capabilities,
     on_attach = function()
         keybinds.set_lsp_keybinds()
     end
 }
 
-lspconfig["cssls"].setup {
+lspconfig['cssls'].setup {
     capabilities=capabilities,
     on_attach = function()
         keybinds.set_lsp_keybinds()
     end
 }
 
-lspconfig["jsonls"].setup {
+lspconfig['jsonls'].setup {
     capabilities=capabilities,
     on_attach = function()
         keybinds.set_lsp_keybinds()
@@ -55,7 +55,7 @@ lspconfig["jsonls"].setup {
 
 -- Setup auto-complete
 -- ===================================================================
-vim.opt.completeopt = {"menu","menuone","noselect"}
+vim.opt.completeopt = {'menu','menuone','noselect'}
 local cmp = require('cmp')
 cmp.setup({
   snippet = {

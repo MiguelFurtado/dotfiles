@@ -50,13 +50,13 @@ return require('packer').startup(function(use)
     -- proper tabs
     use {
         'akinsho/bufferline.nvim',
-        tag = "v3.*",
+        tag = 'v3.*',
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
     -- debugging
     use 'mfussenegger/nvim-dap'
-    use "rcarriga/nvim-dap-ui"
+    use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text' -- inline values
     use 'mfussenegger/nvim-dap-python'
 
@@ -67,8 +67,8 @@ return require('packer').startup(function(use)
     use 'Mofiqul/vscode.nvim'
     use 'folke/tokyonight.nvim'
     use {
-        "catppuccin/nvim",
-        as = "catppuccin",
+        'catppuccin/nvim',
+        as = 'catppuccin',
     }
     use 'vimpostor/vim-lumen' -- auto dark mode
 end)

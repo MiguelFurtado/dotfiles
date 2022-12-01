@@ -11,16 +11,15 @@ require('keybinds').set_general_keybinds()
 require('debugging').setup()
 
 
--- theme setup
-require('tokyonight').setup({
-  style = 'night',
-  on_colors = function(colors)
-    colors.comment = '#818ab3'
-    colors.fg_gutter = '#6d7497'
-  end
-})
-
-cmd[[colorscheme tokyonight]]
+require'catppuccin'.setup {
+    custom_highlights = function(colors)
+        return {
+            Comment = { fg = '#6c7389' },
+            ["@comment"] = { fg = colors.surface2, style = { "italic" }}
+        }
+    end
+}
+cmd[[colorscheme catppuccin]]
 o.termguicolors = true
 
 o.number = true

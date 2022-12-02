@@ -38,3 +38,8 @@ bindkey -v
 # starship prompt
 eval "$(starship init zsh)"
 
+# Get ubuntu suggestions on the package to install to provide a command which
+# was not found
+if [ "$(grep "ubuntu" "/etc/os-release")" ]; then
+    . /etc/zsh_command_not_found
+fi

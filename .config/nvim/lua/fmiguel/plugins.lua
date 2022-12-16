@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
     use 'airblade/vim-rooter'
 
     -- git support
-    use 'airblade/vim-gitgutter'
+    use 'lewis6991/gitsigns.nvim'
 
     -- highlights yanked region
     use 'machakann/vim-highlightedyank'
@@ -26,11 +26,20 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use {'nvim-telescope/telescope-file-browser.nvim'}
+    use 'nvim-telescope/telescope-file-browser.nvim'
     use 'kyazdani42/nvim-web-devicons'
 
-    use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-    --
+    -- Configurations for Nvim LSP, DAP and Linters
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'jayp0521/mason-nvim-dap.nvim'
+    use 'neovim/nvim-lspconfig'
+    use 'mfussenegger/nvim-dap'
+    use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text' -- inline values
+    use 'mfussenegger/nvim-dap-python'
+    use 'j-hui/fidget.nvim' -- feedback while I wait for rust-analyzer
+
     -- lsp auto-completion
     use 'hrsh7th/nvim-cmp' -- the completion engine
     use 'hrsh7th/cmp-buffer' -- words from the curr buffer
@@ -54,12 +63,6 @@ return require('packer').startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
-    -- debugging
-    use 'mfussenegger/nvim-dap'
-    use 'rcarriga/nvim-dap-ui'
-    use 'theHamsta/nvim-dap-virtual-text' -- inline values
-    use 'mfussenegger/nvim-dap-python'
-
     -- netrw icons
     use 'prichrd/netrw.nvim'
 
@@ -70,7 +73,11 @@ return require('packer').startup(function(use)
         'catppuccin/nvim',
         as = 'catppuccin',
     }
-    -- use 'vimpostor/vim-lumen' -- auto dark mode
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+    })
+    use 'vimpostor/vim-lumen' -- auto dark mode
 end)
 end
 

@@ -12,6 +12,7 @@ require('debugging').setup()
 
 
 -- colorscheme setup
+--[[
 require'catppuccin'.setup {
     custom_highlights = function(colors)
         return {
@@ -20,7 +21,8 @@ require'catppuccin'.setup {
         }
     end
 }
-cmd[[colorscheme catppuccin]]
+--]]
+cmd[[colorscheme vscode]]
 o.termguicolors = true
 
 o.number = true

@@ -70,7 +70,7 @@ return require('packer').startup(function(use)
         'catppuccin/nvim',
         as = 'catppuccin',
     }
-    use 'vimpostor/vim-lumen' -- auto dark mode
+    -- use 'vimpostor/vim-lumen' -- auto dark mode
 end)
 end
 

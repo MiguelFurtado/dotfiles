@@ -14,8 +14,8 @@ live_config_reload: true
 
 window:
   dimensions:
-    columns: 95
-    lines: 32
+    columns: 105
+    lines: 28
     x: 650
     y: 100
 
@@ -28,7 +28,8 @@ scrolling:
 
 # Font configuration
 font:
-  size: 15.0
+  size: 14.2
+  family: Fira Code
 
 cursor:
   style:

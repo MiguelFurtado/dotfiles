@@ -10,6 +10,8 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 alias ls='ls --color=auto'
 alias grep='grep --color'
 
+export DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
+
 # Config history
 HISTFILE=~/.local/share/zsh_history
 SAVEHIST=50000
@@ -38,8 +40,9 @@ bindkey -v
 # starship prompt
 eval "$(starship init zsh)"
 
-# Get ubuntu suggestions on the package to install to provide a command which
-# was not found
-if [ "$(grep "ubuntu" "/etc/os-release")" ]; then
+if [ "$DISTRO" = "ubuntu" ]; then
+    # Get ubuntu suggestions on the package to install to provide a command which
+    # was not found
     . /etc/zsh_command_not_found
 fi
+

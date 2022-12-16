@@ -1,8 +1,15 @@
 alias ll='ls -lh'
 alias la='ls -lAh'
 
-alias bat='batcat'
 alias v='vim'
-
 alias ..='cd ..'
+
+if [ "$DISTRO" = "ubuntu" ]; then
+    alias bat='batcat'
+fi
+
+which flashfetch > /dev/null
+if [ $? -eq 0 ]; then
+    alias neofetch="flashfetch"
+fi
 

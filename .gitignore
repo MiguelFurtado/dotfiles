@@ -1,1 +1,8 @@
-.config/kitty/kitty.conf.bak
+*.log
+*.bak
+
+# Nextcloud sync
+.owncloudsync.log
+.sync_*.db
+.sync_*.db-wal
+.sync_*.db-shm

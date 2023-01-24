@@ -75,6 +75,13 @@ return require('lazy').setup {
         dependencies = 'kyazdani42/nvim-web-devicons'
     },
 
+    {
+        'saecki/crates.nvim',
+        version = 'v0.3.*',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        event = { "BufRead Cargo.toml" },
+    },
+
     -- netrw icons
     'prichrd/netrw.nvim',
 

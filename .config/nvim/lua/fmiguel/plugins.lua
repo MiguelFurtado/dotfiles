@@ -60,6 +60,8 @@ return require('lazy').setup {
     'hrsh7th/cmp-nvim-lua', -- nvim lua api
     'L3MON4D3/LuaSnip', -- snippets engine
     'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
+    'rafamadriz/friendly-snippets', -- a bunch of preconfigured snippets for various languages
+
 
     'windwp/nvim-autopairs', -- auto-close pairs
 

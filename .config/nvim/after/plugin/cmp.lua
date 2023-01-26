@@ -1,3 +1,6 @@
+-- load a bunch of preconfigured snippets provided by the frindly-snippets plugin
+require("luasnip.loaders.from_vscode").lazy_load()
+
 vim.opt.completeopt = {'menu','menuone','noselect'}
 local cmp = require('cmp')
 cmp.setup({

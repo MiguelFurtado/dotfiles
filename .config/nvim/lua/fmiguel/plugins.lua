@@ -98,6 +98,7 @@ return require('lazy').setup {
         'rose-pine/neovim',
         name = 'rose-pine',
     },
+    "EdenEast/nightfox.nvim",
     'vimpostor/vim-lumen', -- auto dark mode
 }
 end

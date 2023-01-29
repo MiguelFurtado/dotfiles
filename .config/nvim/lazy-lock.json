@@ -17,6 +17,7 @@
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "a775db8ac7c468fb05fcf67069961dba0d7feb56" },
   "mason.nvim": { "branch": "main", "commit": "e7303a1632c004ebd2dcd0be1aaa4354586c030b" },
   "netrw.nvim": { "branch": "master", "commit": "891890d11603d701bbc1f379f817a47711f39ecc" },
+  "nightfox.nvim": { "branch": "main", "commit": "789b3029d5058e925436ac29eb0521aa4e042b36" },
   "nvim-autopairs": { "branch": "master", "commit": "31042a5823b55c4bfb30efcbba2fc1b5b53f90dc" },
   "nvim-cmp": { "branch": "main", "commit": "11a95792a5be0f5a40bab5fc5b670e5b1399a939" },
   "nvim-dap": { "branch": "master", "commit": "c64a6627bb01eb151da96b28091797beaac09536" },

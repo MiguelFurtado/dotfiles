@@ -12,7 +12,7 @@ require('fmiguel.keybinds').set_dap_keybinds()
 
 
 -- colorscheme setup
-cmd('colorscheme rose-pine')
+cmd('colorscheme carbonfox')
 o.termguicolors = true
 
 o.number = true

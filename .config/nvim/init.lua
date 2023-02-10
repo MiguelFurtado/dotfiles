@@ -22,17 +22,17 @@ o.hlsearch=false
 wo.wrap = false
 o.spell = false
 o.mouse = 'a' --enable mouse cursor
-o.smartindent = true
 -- hide default mode indicator because I'm using lualine
 opt.showmode = false
 -- global status line
 opt.laststatus = 3
 opt.swapfile = false
 
--- insert spaces for tabs like a civilized dev
+-- tabs and indentation
 o.tabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
+o.smartindent = true
 
 o.encoding = 'UTF-8'
 

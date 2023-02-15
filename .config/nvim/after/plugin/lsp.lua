@@ -1,5 +1,6 @@
 local lsp_servers = {
     'rust_analyzer',
+    'gopls',
     'pyright',
     'tsserver',
     'dockerls',

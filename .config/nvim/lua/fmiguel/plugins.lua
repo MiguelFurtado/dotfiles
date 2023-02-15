@@ -38,7 +38,7 @@ return require('lazy').setup {
             {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
             'nvim-telescope/telescope-file-browser.nvim',
             'kyazdani42/nvim-web-devicons',
-        }
+        },
     },
 
     -- Configurations for Nvim LSP, DAP and Linters
@@ -50,6 +50,9 @@ return require('lazy').setup {
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text', -- inline values
     'mfussenegger/nvim-dap-python',
+    -- need this because the mason setup does not include running
+    -- delve with args
+    'leoluz/nvim-dap-go',
     'j-hui/fidget.nvim', -- feedback while I wait for rust-analyzer
 
     -- lsp auto-completion

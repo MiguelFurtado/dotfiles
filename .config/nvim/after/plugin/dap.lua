@@ -1,6 +1,7 @@
 local dap_servers = {
     "python", -- debugpy
     "codelldb", -- rust
+    "delve", -- golang
 }
 
 require'mason-nvim-dap'.setup {
@@ -9,4 +10,4 @@ require'mason-nvim-dap'.setup {
 }
 require'mason-nvim-dap'.setup_handlers()
 require'dapui'.setup()
-
+require('dap-go').setup()

@@ -13,97 +13,123 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-function M.load()
-return require('lazy').setup {
-    -- When a file is opened, this will switch the vim workspace to the project's root
-    'airblade/vim-rooter',
+local plugins = {
+  -- When a file is opened, this will switch the vim workspace to the project's root
+  'airblade/vim-rooter',
 
-    -- git support
-    'lewis6991/gitsigns.nvim',
+  -- git support
+  'lewis6991/gitsigns.nvim',
 
-    -- highlights yanked region
-    'machakann/vim-highlightedyank',
+  -- highlights yanked region
+  'machakann/vim-highlightedyank',
 
-    -- treesitter provides better syntax highlight
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+  -- treesitter provides better syntax highlighting
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate'
+  },
+
+  -- Telescope
+  {
+    'nvim-telescope/telescope.nvim', version = '0.1.0',
+    dependencies = {
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      'nvim-telescope/telescope-file-browser.nvim',
+      'kyazdani42/nvim-web-devicons',
     },
+  },
 
-    -- Telescope
-    {
-        'nvim-telescope/telescope.nvim', version = '0.1.0',
-        dependencies = {
-            {'nvim-lua/plenary.nvim'},
-            {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-            'nvim-telescope/telescope-file-browser.nvim',
-            'kyazdani42/nvim-web-devicons',
-        },
-    },
+  -- Configurations for Nvim LSP, DAP and Linters
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'jayp0521/mason-nvim-dap.nvim',
+  'neovim/nvim-lspconfig',
+  'mfussenegger/nvim-dap',
+  'rcarriga/nvim-dap-ui',
+  'theHamsta/nvim-dap-virtual-text', -- inline values
 
-    -- Configurations for Nvim LSP, DAP and Linters
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'jayp0521/mason-nvim-dap.nvim',
-    'neovim/nvim-lspconfig',
-    'mfussenegger/nvim-dap',
-    'rcarriga/nvim-dap-ui',
-    'theHamsta/nvim-dap-virtual-text', -- inline values
-    'mfussenegger/nvim-dap-python',
-    -- need this because the mason setup does not include running
-    -- delve with args
+  -- need this because the mason setup does not include running
+  -- delve with args
+  {
     'leoluz/nvim-dap-go',
+    ft = "go",
+    config = function()
+      require('dap-go').setup()
+    end
+  },
+
+  {
     'j-hui/fidget.nvim', -- feedback while I wait for rust-analyzer
+    config = function()
+      require('fidget').setup()
+    end
+  },
 
-    -- lsp auto-completion
-    'hrsh7th/nvim-cmp', -- the completion engine
-    'hrsh7th/cmp-buffer', -- words from the curr buffer
-    'hrsh7th/cmp-path', -- path auto-completion
-    'hrsh7th/cmp-nvim-lsp', -- lsp
-    'hrsh7th/cmp-nvim-lua', -- nvim lua api
-    'L3MON4D3/LuaSnip', -- snippets engine
-    'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
-    'rafamadriz/friendly-snippets', -- a bunch of preconfigured snippets for various languages
+  -- lsp auto-completion
+  'hrsh7th/nvim-cmp', -- the completion engine
+  'hrsh7th/cmp-buffer', -- words from the curr buffer
+  'hrsh7th/cmp-path', -- path auto-completion
+  'hrsh7th/cmp-nvim-lsp', -- lsp
+  'hrsh7th/cmp-nvim-lua', -- nvim lua api
+  'L3MON4D3/LuaSnip', -- snippets engine
+  'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
+  'rafamadriz/friendly-snippets', -- a bunch of preconfigured snippets for various languages
 
 
-    'windwp/nvim-autopairs', -- auto-close pairs
+  'windwp/nvim-autopairs', -- auto-close pairs
 
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true }
-    },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true }
+  },
 
-    -- proper tabs
-    {
-        'akinsho/bufferline.nvim',
-        version = 'v3.*',
-        dependencies = 'kyazdani42/nvim-web-devicons'
-    },
+  -- proper tabs
+  {
+    'akinsho/bufferline.nvim',
+    version = 'v3.*',
+    dependencies = 'kyazdani42/nvim-web-devicons'
+  },
 
-    {
-        'saecki/crates.nvim',
-        version = 'v0.3.*',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        event = { "BufRead Cargo.toml" },
-    },
+  {
+    'saecki/crates.nvim',
+    version = 'v0.3.*',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    event = { "BufRead Cargo.toml" },
+    config = function()
+      require('crates').setup()
+    end
+  },
 
-    -- netrw icons
+  -- netrw icons
+  {
     'prichrd/netrw.nvim',
+    config = function()
+      require'netrw'.setup()
+    end
+  },
 
-    -- themes
-    'Mofiqul/vscode.nvim',
-    'folke/tokyonight.nvim',
-    {
-        'catppuccin/nvim',
-        name = 'catppuccin',
-    },
-    {
-        'rose-pine/neovim',
-        name = 'rose-pine',
-    },
-    "EdenEast/nightfox.nvim",
-    'vimpostor/vim-lumen', -- auto dark mode
+  -- themes
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+  },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+  },
+  "EdenEast/nightfox.nvim",
+  --'vimpostor/vim-lumen', -- auto dark mode
 }
+
+local opts = {
+  defaults = {
+    lazy = false, -- should plugins be lazy-loaded?
+  },
+}
+
+function M.load()
+  require("lazy").setup(plugins, opts)
 end
 
 return M

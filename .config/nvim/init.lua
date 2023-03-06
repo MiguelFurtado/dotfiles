@@ -12,7 +12,7 @@ require('fmiguel.keybinds').set_dap_keybinds()
 
 
 -- colorscheme setup
-cmd('colorscheme carbonfox')
+cmd('color nightfox')
 o.termguicolors = true
 
 o.number = true

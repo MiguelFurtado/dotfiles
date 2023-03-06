@@ -38,7 +38,7 @@ o.encoding = 'UTF-8'
 
 -- remove trailing spaces on save so I can sleep well at night
 A.nvim_create_autocmd({ 'BufWritePre' }, {
-    pattern = { '*' },
-    command = [[%s/\s\+$//e]],
+  pattern = { '*' },
+  command = [[%s/\s\+$//e]],
 })
 

@@ -41,7 +41,15 @@ local plugins = {
   },
 
   -- Configurations for Nvim LSP, DAP and Linters
-  'williamboman/mason.nvim',
+  {
+    'williamboman/mason.nvim',
+    config = function()
+      require'mason'.setup {
+          PATH = "prepend",
+      }
+    end
+  },
+
   'williamboman/mason-lspconfig.nvim',
   'jayp0521/mason-nvim-dap.nvim',
   'neovim/nvim-lspconfig',

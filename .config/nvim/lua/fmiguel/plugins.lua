@@ -106,7 +106,7 @@ local plugins = {
     'saecki/crates.nvim',
     version = 'v0.3.*',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    event = { "BufRead Cargo.toml" },
+    event = { 'BufRead Cargo.toml' },
     config = function()
       require('crates').setup()
     end
@@ -124,10 +124,6 @@ local plugins = {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-  },
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
   },
   "EdenEast/nightfox.nvim",
   --'vimpostor/vim-lumen', -- auto dark mode

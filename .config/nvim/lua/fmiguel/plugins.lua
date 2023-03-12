@@ -84,7 +84,6 @@ local plugins = {
   'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
   'rafamadriz/friendly-snippets', -- a bunch of preconfigured snippets for various languages
 
-
   'windwp/nvim-autopairs', -- auto-close pairs
 
   {
@@ -96,7 +95,11 @@ local plugins = {
   {
     'akinsho/bufferline.nvim',
     version = 'v3.*',
-    dependencies = 'kyazdani42/nvim-web-devicons'
+    dependencies = 'kyazdani42/nvim-web-devicons',
+    event = {'TabNew'},
+    config = function()
+      require('fmiguel.pconfig.bufferline')
+    end
   },
 
   {

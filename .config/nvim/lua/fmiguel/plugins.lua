@@ -120,12 +120,23 @@ local plugins = {
     end
   },
 
+  -- indent guides
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#353535 gui=nocombine]]
+      require'indent_blankline'.setup {
+        char_highlight_list = { "IndentBlanklineIndent1" },
+      }
+    end
+  },
+
   -- themes
   {
     'catppuccin/nvim',
     name = 'catppuccin',
   },
-  "EdenEast/nightfox.nvim",
+  'EdenEast/nightfox.nvim',
   --'vimpostor/vim-lumen', -- auto dark mode
 }
 

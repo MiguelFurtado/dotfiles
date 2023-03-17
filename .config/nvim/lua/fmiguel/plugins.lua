@@ -88,7 +88,8 @@ local plugins = {
 
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true }
+    dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
+    config = require'fmiguel.pconfig.lualine'.setup
   },
 
   -- proper tabs
@@ -97,9 +98,7 @@ local plugins = {
     version = 'v3.*',
     dependencies = 'kyazdani42/nvim-web-devicons',
     event = {'TabNew'},
-    config = function()
-      require('fmiguel.pconfig.bufferline')
-    end
+    config = require('fmiguel.pconfig.bufferline').setup
   },
 
   {
@@ -123,12 +122,7 @@ local plugins = {
   -- indent guides
   {
     "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#353535 gui=nocombine]]
-      require'indent_blankline'.setup {
-        char_highlight_list = { "IndentBlanklineIndent1" },
-      }
-    end
+    config = require'fmiguel.pconfig.indent-blankline'.setup
   },
 
   -- themes
@@ -137,7 +131,7 @@ local plugins = {
     name = 'catppuccin',
   },
   'EdenEast/nightfox.nvim',
-  --'vimpostor/vim-lumen', -- auto dark mode
+  'vimpostor/vim-lumen', -- auto dark mode
 }
 
 local opts = {

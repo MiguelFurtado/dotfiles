@@ -33,8 +33,19 @@ o.smartindent = true
 o.encoding = 'UTF-8'
 
 -- remove trailing spaces on save so I can sleep well at night
-A.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = { '*' },
+A.nvim_create_autocmd({'BufWritePre'}, {
+  pattern = {'*'},
   command = [[%s/\s\+$//e]],
+})
+
+-- Highlight yanked region
+A.nvim_create_autocmd({'TextYankPost'}, {
+  pattern = {'*'},
+  callback = function()
+    vim.highlight.on_yank {
+      higroup=(vim.fn['hlexists']('Highlightedya--Region') > 0 and 'HighlightedyankRegion' or 'IncSearch'),
+      timeout=700
+    }
+	end
 })
 

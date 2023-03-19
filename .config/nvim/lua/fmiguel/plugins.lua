@@ -20,9 +20,6 @@ local plugins = {
   -- git support
   'lewis6991/gitsigns.nvim',
 
-  -- highlights yanked region
-  'machakann/vim-highlightedyank',
-
   -- treesitter provides better syntax highlighting
   {
     'nvim-treesitter/nvim-treesitter',

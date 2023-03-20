@@ -10,7 +10,6 @@ require('fmiguel.plugins').load()
 require('fmiguel.keybinds').set_general_keybinds()
 require('fmiguel.keybinds').set_dap_keybinds()
 
-o.termguicolors = true
 o.number = true
 o.relativenumber = true
 o.cul = true -- highlight current line

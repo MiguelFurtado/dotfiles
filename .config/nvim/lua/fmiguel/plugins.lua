@@ -18,12 +18,16 @@ local plugins = {
   'airblade/vim-rooter',
 
   -- git support
-  'lewis6991/gitsigns.nvim',
+  {
+    'lewis6991/gitsigns.nvim',
+    config = require'fmiguel.pconfig.gitsigns'.setup,
+  },
 
   -- treesitter provides better syntax highlighting
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
+    build = ':TSUpdate',
+    config = require'fmiguel.pconfig.treesitter'.setup,
   },
 
   -- Telescope
@@ -40,18 +44,29 @@ local plugins = {
   -- Configurations for Nvim LSP, DAP and Linters
   {
     'williamboman/mason.nvim',
-    config = function()
-      require'mason'.setup {
-          PATH = "prepend",
-      }
-    end
+    config = require'fmiguel.pconfig.mason'.setup,
+    dependencies = {'williamboman/mason-lspconfig.nvim'},
   },
 
-  'williamboman/mason-lspconfig.nvim',
-  'jayp0521/mason-nvim-dap.nvim',
-  'neovim/nvim-lspconfig',
-  'mfussenegger/nvim-dap',
-  'rcarriga/nvim-dap-ui',
+  {
+    'neovim/nvim-lspconfig',
+    config = require'fmiguel.pconfig.lsp_config'.setup,
+  },
+
+
+  {
+    'jayp0521/mason-nvim-dap.nvim',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+    },
+    config = require'fmiguel.pconfig.dap'.setup,
+  },
+  {
+    'rcarriga/nvim-dap-ui',
+    config = function()
+      require'dapui'.setup()
+    end
+  },
   'theHamsta/nvim-dap-virtual-text', -- inline values
 
   -- need this because the mason setup does not include running
@@ -72,21 +87,29 @@ local plugins = {
   },
 
   -- lsp auto-completion
-  'hrsh7th/nvim-cmp', -- the completion engine
-  'hrsh7th/cmp-buffer', -- words from the curr buffer
-  'hrsh7th/cmp-path', -- path auto-completion
-  'hrsh7th/cmp-nvim-lsp', -- lsp
-  'hrsh7th/cmp-nvim-lua', -- nvim lua api
-  'L3MON4D3/LuaSnip', -- snippets engine
-  'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
-  'rafamadriz/friendly-snippets', -- a bunch of preconfigured snippets for various languages
+  {
+    'hrsh7th/nvim-cmp', -- the completion engine
+    config = require('fmiguel.pconfig.cmp').setup,
+    dependencies = {
+      'L3MON4D3/LuaSnip', -- snippets engine
+      'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
+      'hrsh7th/cmp-buffer', -- words from the curr buffer
+      'hrsh7th/cmp-path', -- path auto-completion
+      'hrsh7th/cmp-nvim-lua', -- nvim lua api
+      'hrsh7th/cmp-nvim-lsp',
+      'rafamadriz/friendly-snippets', -- a bunch of preconfigured snippets for various languages
+    },
+  },
 
-  'windwp/nvim-autopairs', -- auto-close pairs
+  {
+    'windwp/nvim-autopairs', -- auto-close pairs
+    config = require'fmiguel.pconfig.autopairs'.setup,
+  },
 
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
-    config = require'fmiguel.pconfig.lualine'.setup
+    config = require'fmiguel.pconfig.lualine'.setup,
   },
 
   -- proper tabs
@@ -126,6 +149,7 @@ local plugins = {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
+    config = require'fmiguel.pconfig.catppuccin'.setup,
   },
   'EdenEast/nightfox.nvim',
   'vimpostor/vim-lumen', -- auto dark mode

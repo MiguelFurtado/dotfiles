@@ -19,3 +19,8 @@ disabled = true
 [sudo]
 disabled = false
 
+[directory]
+truncation_length = 1
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '

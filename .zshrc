@@ -1,6 +1,7 @@
 # custom env variables
 export PATH=$HOME/.local/bin:$PATH \
-    EDITOR="nvim"
+    EDITOR="nvim" \
+    DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
 
 # rootless docker
 export PATH=$HOME/bin:$PATH
@@ -9,8 +10,6 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 # some colour plz
 alias ls='ls --color=auto'
 alias grep='grep --color'
-
-export DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
 
 # Config history
 HISTFILE=~/.local/share/zsh_history

@@ -139,12 +139,6 @@ local plugins = {
     end
   },
 
-  -- indent guides
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = require'fmiguel.pconfig.indent-blankline'.setup
-  },
-
   -- themes
   {
     'catppuccin/nvim',

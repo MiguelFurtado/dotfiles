@@ -17,7 +17,6 @@ vim.api.nvim_create_autocmd('User', {
     -- Need to reset these plugins so colors don't look weird
     require'fmiguel.pconfig.lualine'.setup()
     require'fmiguel.pconfig.bufferline'.setup()
-    require'fmiguel.pconfig.indent-blankline'.setup()
   end
 })
 

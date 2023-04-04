@@ -152,6 +152,7 @@ local plugins = {
     config = require'fmiguel.pconfig.catppuccin'.setup,
   },
   'EdenEast/nightfox.nvim',
+  'rebelot/kanagawa.nvim',
   'vimpostor/vim-lumen', -- auto dark mode
 }
 

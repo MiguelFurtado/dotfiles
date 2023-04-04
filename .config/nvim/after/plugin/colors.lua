@@ -1,6 +1,6 @@
 vim.o.termguicolors = true
-local dark_theme = 'carbonfox'
-local light_theme = 'dawnfox'
+local dark_theme = 'kanagawa-wave'
+local light_theme = 'kanagawa-lotus'
 
 function choose_theme()
   if vim.o.background == 'dark' then

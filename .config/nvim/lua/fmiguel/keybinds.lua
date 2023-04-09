@@ -9,12 +9,11 @@ function keybinds.set_general_keybinds()
   nmap('<leader>f', "<cmd>lua require('telescope.builtin').find_files({hidden=true})<CR>")
   nmap('<leader>sw', "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>")
   nmap('<leader>ss', "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
-  nmap('<leader>dg', "<cmd>:Telescope diagnostics<CR>")
-  nmap('<leader>g', "<cmd>:Telescope live_grep<CR>")
-  nmap('<leader>E', ":Ex<CR>")
-  nmap('<leader>e', ":Telescope file_browser<CR>")
+  nmap('<leader>dg', "<cmd>lua require('telescope.builtin').diagnostics()<CR>")
+  nmap('<leader>gg', "<cmd>lua require('telescope.builtin').live_grep()<CR>")
   nmap('<leader>w', "<cmd>lua vim.cmd('w')<CR>")
-  nmap('<leader>e', "<cmd>lua vim.diagnostic.open_float()<CR>")
+  nmap('<leader>ee', "<cmd>lua vim.diagnostic.open_float()<CR>")
+  nmap('<leader>bb', "<cmd>lua require('telescope.builtin').buffers()<CR>")
 end
 
 function keybinds.set_dap_keybinds()
@@ -23,9 +22,9 @@ function keybinds.set_dap_keybinds()
   nmap('<F3>', ":lua require('dap').step_into()<CR>")
   nmap('<F4>', ":lua require('dap').step_out()<CR>")
   nmap('<leader><F5>', ":lua require('dap').close()<CR>")
-  nmap('<leader>b', ":lua require('dap').toggle_breakpoint()<CR>")
+  nmap('<leader>B', ":lua require('dap').toggle_breakpoint()<CR>")
   -- conditional breakpoint
-  nmap('<leader>B', ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+  nmap('<leader>cB', ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
   nmap('<leader>dui', ":lua require('dapui').toggle()<CR>")
 end
 

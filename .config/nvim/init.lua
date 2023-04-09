@@ -7,8 +7,10 @@ local opt = vim.opt
 g.mapleader = ' '
 
 require('fmiguel.plugins').load()
-require('fmiguel.keybinds').set_general_keybinds()
-require('fmiguel.keybinds').set_dap_keybinds()
+local keybinds = require('fmiguel.keybinds')
+keybinds.set_general_keybinds()
+keybinds.set_dap_keybinds()
+require('fmiguel.colors')
 
 o.number = true
 o.relativenumber = true

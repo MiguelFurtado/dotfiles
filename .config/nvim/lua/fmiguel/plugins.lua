@@ -117,7 +117,7 @@ local plugins = {
     'akinsho/bufferline.nvim',
     version = 'v3.*',
     dependencies = 'kyazdani42/nvim-web-devicons',
-    event = {'TabNew'},
+    event = {'BufEnter'},
     config = require('fmiguel.pconfig.bufferline').setup
   },
 

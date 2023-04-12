@@ -139,6 +139,14 @@ local plugins = {
     end
   },
 
+  { 'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require'indent_blankline'.setup {
+        show_current_context = true,
+      }
+    end,
+  },
+
   -- themes
   {
     'catppuccin/nvim',

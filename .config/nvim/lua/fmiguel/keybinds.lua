@@ -6,7 +6,7 @@ end
 
 
 function keybinds.set_general_keybinds()
-  nmap('<leader>f', "<cmd>lua require('telescope.builtin').find_files({hidden=true})<CR>")
+  nmap('<leader>f', "<cmd>lua require('telescope.builtin').find_files()<CR>")
   nmap('<leader>sw', "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>")
   nmap('<leader>ss', "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
   nmap('<leader>dg', "<cmd>lua require('telescope.builtin').diagnostics()<CR>")

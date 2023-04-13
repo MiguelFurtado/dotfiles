@@ -39,6 +39,7 @@ local plugins = {
       'nvim-telescope/telescope-file-browser.nvim',
       'kyazdani42/nvim-web-devicons',
     },
+    config = require'fmiguel.pconfig.telescope'.setup
   },
 
   -- Configurations for Nvim LSP, DAP and Linters

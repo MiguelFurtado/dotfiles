@@ -1,0 +1,15 @@
+[[targets]]
+name = "kitty"
+light = "PaperColor Light"
+dark = "Campbell"
+
+[[targets]]
+name = "bat"
+light = "Monokai Extended Light"
+dark = "Monokai Extended"
+
+[[targets]]
+name = "alacritty"
+light = "Default.light"
+dark = "Default.dark"
+

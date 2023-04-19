@@ -14,10 +14,13 @@ live_config_reload: true
 
 window:
   dimensions:
-    columns: 95
-    lines: 30
+    columns: 110
+    lines: 35
     x: 450
     y: 100
+  padding:
+    x: 2
+    y: 2
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -30,7 +33,7 @@ scrolling:
 font:
   normal:
     family: Fira Code
-  size: 16.0
+  size: 15.0
 
 cursor:
   style:
@@ -39,34 +42,31 @@ cursor:
 
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
-
-import:
-  - ~/.config/alacritty/themes/Ayu-Mirage.yml
 colors:
-  # Default colors
+  name: Default (dark)
+  author: Chris Kempson
   primary:
-    background: '#0c0c0c'
-    foreground: '#cccccc'
-
-  # Normal colors
+    background: "#151515"
+    foreground: "#d0d0d0"
+  cursor:
+    text: "#151515"
+    cursor: "#d0d0d0"
   normal:
-    black: '#0c0c0c'
-    red: '#c50f1f'
-    green: '#13a10e'
-    yellow: '#c19c00'
-    blue: '#0037da'
-    magenta: '#881798'
-    cyan: '#3a96dd'
-    white: '#cccccc'
-
-  # Bright colors
+    black: "#151515"
+    red: "#ac4142"
+    green: "#90a959"
+    yellow: "#f4bf75"
+    blue: "#6a9fb5"
+    magenta: "#aa759f"
+    cyan: "#75b5aa"
+    white: "#d0d0d0"
   bright:
-    black: '#767676'
-    red: '#e74856'
-    green: '#16c60c'
-    yellow: '#f9f1a5'
-    blue: '#3b78ff'
-    magenta: '#b4009e'
-    cyan: '#61d6d6'
-    white: '#f2f2f2'
-theme: Campbell
+    black: "#505050"
+    red: "#ac4142"
+    green: "#90a959"
+    yellow: "#f4bf75"
+    blue: "#6a9fb5"
+    magenta: "#aa759f"
+    cyan: "#75b5aa"
+    white: "#f5f5f5"
+theme: Default.dark

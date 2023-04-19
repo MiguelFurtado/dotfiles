@@ -141,11 +141,8 @@ local plugins = {
   },
 
   { 'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require'indent_blankline'.setup {
-        show_current_context = true,
-      }
-    end,
+    config = require'fmiguel.pconfig.indent_blankline'.setup,
+    event = 'BufEnter',
   },
 
   -- themes

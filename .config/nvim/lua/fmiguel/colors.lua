@@ -1,6 +1,6 @@
 vim.o.termguicolors = true
-local dark_theme = 'kanagawa-wave'
-local light_theme = 'kanagawa-lotus'
+local dark_theme = 'carbonfox'
+local light_theme = 'dawnfox'
 
 function choose_theme()
   if vim.o.background == 'dark' then
@@ -9,6 +9,8 @@ function choose_theme()
   end
   vim.cmd(string.format('color %s', light_theme))
 end
+
+choose_theme()
 
 vim.api.nvim_create_autocmd('User', {
   pattern = {'LumenLight', 'LumenDark'},
@@ -20,4 +22,3 @@ vim.api.nvim_create_autocmd('User', {
   end
 })
 
-choose_theme()

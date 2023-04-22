@@ -14,6 +14,13 @@ function keybinds.set_general_keybinds()
   nmap('<leader>w', "<cmd>lua vim.cmd('w')<CR>")
   nmap('<leader>ee', "<cmd>lua vim.diagnostic.open_float()<CR>")
   nmap('<leader>bb', "<cmd>lua require('telescope.builtin').buffers()<CR>")
+
+  nmap('<leader>hh', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
+  nmap('<leader>ha', "<cmd>lua require('harpoon.mark').add_file()<CR>")
+  nmap('<leader>11', "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
+  nmap('<leader>22', "<cmd>lua require('harpoon.ui').nav_file(2)<CR>")
+  nmap('<leader>33', "<cmd>lua require('harpoon.ui').nav_file(3)<CR>")
+  nmap('<leader>44', "<cmd>lua require('harpoon.ui').nav_file(4)<CR>")
 end
 
 function keybinds.set_dap_keybinds()

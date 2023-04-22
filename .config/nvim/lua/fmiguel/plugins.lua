@@ -145,6 +145,8 @@ local plugins = {
     event = 'BufEnter',
   },
 
+  'ThePrimeagen/harpoon',
+
   -- themes
   {
     'catppuccin/nvim',

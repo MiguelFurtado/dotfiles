@@ -1,6 +1,7 @@
 # custom env variables
 export PATH=$HOME/.local/bin:$PATH \
     EDITOR="nvim" \
+    XDG_CONFIG_HOME=$HOME/.config/ \
     DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
 
 # rootless docker

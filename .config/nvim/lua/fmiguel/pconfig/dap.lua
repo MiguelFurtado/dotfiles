@@ -12,7 +12,6 @@ function M.setup()
     ensure_installed = dap_servers,
     automatic_setup = true,
   }
-  dap.setup_handlers()
 end
 
 return M

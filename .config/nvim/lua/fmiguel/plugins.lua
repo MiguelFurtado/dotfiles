@@ -140,11 +140,6 @@ local plugins = {
     end
   },
 
-  { 'lukas-reineke/indent-blankline.nvim',
-    config = require'fmiguel.pconfig.indent_blankline'.setup,
-    event = 'BufEnter',
-  },
-
   'ThePrimeagen/harpoon',
 
   -- themes

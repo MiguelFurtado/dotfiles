@@ -1,8 +1,7 @@
 [[targets]]
 name = "kitty"
 light = "PaperColor Light"
-dark = "Campbell"
-
+dark = "Arthur"
 [[targets]]
 name = "bat"
 light = "Monokai Extended Light"

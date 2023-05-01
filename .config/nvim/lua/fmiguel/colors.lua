@@ -1,5 +1,5 @@
 vim.o.termguicolors = true
-local dark_theme = 'carbonfox'
+local dark_theme = 'nightfox'
 local light_theme = 'dawnfox'
 
 function choose_theme()

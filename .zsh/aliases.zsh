@@ -8,7 +8,7 @@ if [ "$DISTRO" = "ubuntu" ]; then
     alias bat='batcat'
 fi
 
-which flashfetch > /dev/null
+command -v flashfetch > /dev/null
 if [ $? -eq 0 ]; then
     alias neofetch="flashfetch"
 fi

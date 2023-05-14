@@ -4,8 +4,8 @@ live_config_reload: true
 
 window:
   dimensions:
-    columns: 105
-    lines: 32
+    columns: 95
+    lines: 28
     x: 450
     y: 100
   padding:
@@ -22,11 +22,11 @@ scrolling:
 font:
   normal:
     family: Fira Code
-  size: 15.2
+  size: 14.0
 
 cursor:
   style:
-    shape: Underline
+    shape: block
     blinking: on
 
 key_bindings:

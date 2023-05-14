@@ -15,26 +15,29 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
-    "ahmedkhalf/project.nvim",
+    'ahmedkhalf/project.nvim',
     config = require'fmiguel.pconfig.project'.setup,
   },
 
   -- git support
   {
     'lewis6991/gitsigns.nvim',
+    version = "0.*",
     config = require'fmiguel.pconfig.gitsigns'.setup,
   },
 
   -- treesitter provides better syntax highlighting
   {
     'nvim-treesitter/nvim-treesitter',
+    version = '^0.9',
     build = ':TSUpdate',
     config = require'fmiguel.pconfig.treesitter'.setup,
   },
 
   -- Telescope
   {
-    'nvim-telescope/telescope.nvim', version = '0.1.0',
+    'nvim-telescope/telescope.nvim',
+    version = '^0.1.0',
     dependencies = {
       {'nvim-lua/plenary.nvim'},
       {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -47,29 +50,41 @@ local plugins = {
   -- Configurations for Nvim LSP, DAP and Linters
   {
     'williamboman/mason.nvim',
+    version = '^1',
     config = require'fmiguel.pconfig.mason'.setup,
-    dependencies = {'williamboman/mason-lspconfig.nvim'},
   },
 
+  -- provides lspconfig compatibility to mason
   {
-    'neovim/nvim-lspconfig',
-    config = require'fmiguel.pconfig.lsp_config'.setup,
+    'williamboman/mason-lspconfig.nvim',
+    version = "^0.1",
+    dependencies = {
+      {
+        'neovim/nvim-lspconfig',
+        version = "^0.1",
+        config = require'fmiguel.pconfig.lsp_config'.setup,
+      },
+    },
   },
-
 
   {
     'jayp0521/mason-nvim-dap.nvim',
+    version = "^2",
     dependencies = {
       'mfussenegger/nvim-dap',
+      version = "0.*",
     },
     config = require'fmiguel.pconfig.dap'.setup,
   },
+
   {
     'rcarriga/nvim-dap-ui',
+    version = "^3",
     config = function()
       require'dapui'.setup()
-    end
+    end,
   },
+
   'theHamsta/nvim-dap-virtual-text', -- inline values
 
   -- need this because the mason setup does not include running
@@ -79,22 +94,29 @@ local plugins = {
     ft = "go",
     config = function()
       require('dap-go').setup()
-    end
+    end,
   },
 
   {
     'j-hui/fidget.nvim', -- feedback while I wait for rust-analyzer
     config = function()
       require('fidget').setup()
-    end
+    end,
   },
 
   -- lsp auto-completion
   {
+    -- the latest release is from August 2022 but there were a lot of commits
+    -- since and the project is very actively maintained so I'll wait till the
+    -- next release to specify a version.
+    -- TODO use a version on next release
     'hrsh7th/nvim-cmp', -- the completion engine
     config = require('fmiguel.pconfig.cmp').setup,
     dependencies = {
-      'L3MON4D3/LuaSnip', -- snippets engine
+      {
+        'L3MON4D3/LuaSnip',
+        version = "^1",
+      }, -- snippets engine
       'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
       'hrsh7th/cmp-buffer', -- words from the curr buffer
       'hrsh7th/cmp-path', -- path auto-completion
@@ -118,20 +140,20 @@ local plugins = {
   -- proper tabs
   {
     'akinsho/bufferline.nvim',
-    version = 'v3.*',
+    version = '^4',
     dependencies = 'kyazdani42/nvim-web-devicons',
     event = {'BufEnter'},
-    config = require('fmiguel.pconfig.bufferline').setup
+    config = require('fmiguel.pconfig.bufferline').setup,
   },
 
   {
     'saecki/crates.nvim',
-    version = 'v0.3.*',
+    version = '^0.3',
     dependencies = { 'nvim-lua/plenary.nvim' },
     event = { 'BufRead Cargo.toml' },
     config = function()
       require('crates').setup()
-    end
+    end,
   },
 
   -- netrw icons
@@ -139,7 +161,7 @@ local plugins = {
     'prichrd/netrw.nvim',
     config = function()
       require'netrw'.setup()
-    end
+    end,
   },
 
   'ThePrimeagen/harpoon',
@@ -149,10 +171,16 @@ local plugins = {
     'catppuccin/nvim',
     name = 'catppuccin',
     config = require'fmiguel.pconfig.catppuccin'.setup,
+    version = "^1",
   },
-  'EdenEast/nightfox.nvim',
+  {
+    'EdenEast/nightfox.nvim',
+    version = "^3",
+  },
   'rebelot/kanagawa.nvim',
-  'vimpostor/vim-lumen', -- auto dark mode
+
+  -- detect system theme (dark/light)
+  'vimpostor/vim-lumen',
 }
 
 local opts = {

@@ -19,6 +19,7 @@ o.hlsearch=false
 wo.wrap = false
 o.spell = false
 o.mouse = 'a' --enable mouse cursor
+o.guicursor = "i:block"
 -- hide default mode indicator because I'm using lualine
 opt.showmode = false
 -- global status line

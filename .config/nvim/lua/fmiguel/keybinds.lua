@@ -11,9 +11,11 @@ function keybinds.set_general_keybinds()
   nmap('<leader>ss', "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
   nmap('<leader>dg', "<cmd>lua require('telescope.builtin').diagnostics()<CR>")
   nmap('<leader>gg', "<cmd>lua require('telescope.builtin').live_grep()<CR>")
+  nmap('<leader>bb', "<cmd>lua require('telescope.builtin').buffers()<CR>")
+  nmap('<leader>pp', "<cmd>lua require'telescope'.extensions.projects.projects{}<CR>")
+
   nmap('<leader>w', "<cmd>lua vim.cmd('w')<CR>")
   nmap('<leader>ee', "<cmd>lua vim.diagnostic.open_float()<CR>")
-  nmap('<leader>bb', "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
   nmap('<leader>hh', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
   nmap('<leader>ha', "<cmd>lua require('harpoon.mark').add_file()<CR>")

@@ -30,9 +30,9 @@
   "nvim-treesitter": { "branch": "master", "commit": "680807fa6a482c639119098bc48ca3831c66db13" },
   "nvim-web-devicons": { "branch": "master", "commit": "986875b7364095d6535e28bd4aac3a9357e91bbe" },
   "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
+  "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "4054a5d0ab85475bf75df00cf10754d2e54b5532" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope.nvim": { "branch": "master", "commit": "b79cd6c88b3d96b0f49cb7d240807cd59b610cd8" },
-  "vim-lumen": { "branch": "master", "commit": "b183859510bebfc9062caf300e24c707a5fe522f" },
-  "vim-rooter": { "branch": "master", "commit": "4f52ca556a0b9e257bf920658714470ea0320b7a" }
+  "vim-lumen": { "branch": "master", "commit": "b183859510bebfc9062caf300e24c707a5fe522f" }
 }

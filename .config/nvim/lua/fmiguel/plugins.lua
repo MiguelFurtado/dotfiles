@@ -14,8 +14,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  -- When a file is opened, this will switch the vim workspace to the project's root
-  'airblade/vim-rooter',
+  {
+    "ahmedkhalf/project.nvim",
+    config = require'fmiguel.pconfig.project'.setup,
+  },
 
   -- git support
   {

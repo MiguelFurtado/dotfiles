@@ -1,11 +1,12 @@
 alias ll='ls -lh'
 alias la='ls -lAh'
 
-alias v='vim'
-alias ..='cd ..'
+if [ $DISTRO = "ubuntu" ]; then
+    alias bat="batcat"
+fi
 
-if [ "$DISTRO" = "ubuntu" ]; then
-    alias bat='batcat'
+if [ $TERM = "xterm-kitty" ]; then
+    alias ssh="kitty +kitten ssh"
 fi
 
 command -v flashfetch > /dev/null

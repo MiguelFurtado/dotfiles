@@ -13,6 +13,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local plenary_dep = {
+  'nvim-lua/plenary.nvim',
+  version = "^0.1.3",
+}
+
 local plugins = {
   {
     'ahmedkhalf/project.nvim',
@@ -34,17 +39,18 @@ local plugins = {
     config = require'fmiguel.pconfig.treesitter'.setup,
   },
 
+  'kyazdani42/nvim-web-devicons',
+
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',
-    version = '^0.1.0',
+    version = '^0.1.1',
     dependencies = {
-      {'nvim-lua/plenary.nvim'},
+      plenary_dep,
       {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       'nvim-telescope/telescope-file-browser.nvim',
-      'kyazdani42/nvim-web-devicons',
     },
-    config = require'fmiguel.pconfig.telescope'.setup
+    config = require'fmiguel.pconfig.telescope'.setup,
   },
 
   -- Configurations for Nvim LSP, DAP and Linters
@@ -133,7 +139,6 @@ local plugins = {
 
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
     config = require'fmiguel.pconfig.lualine'.setup,
   },
 
@@ -141,7 +146,6 @@ local plugins = {
   {
     'akinsho/bufferline.nvim',
     version = '^4',
-    dependencies = 'kyazdani42/nvim-web-devicons',
     event = {'BufEnter'},
     config = require('fmiguel.pconfig.bufferline').setup,
   },
@@ -149,7 +153,7 @@ local plugins = {
   {
     'saecki/crates.nvim',
     version = '^0.3',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { planary_dep },
     event = { 'BufRead Cargo.toml' },
     config = function()
       require('crates').setup()

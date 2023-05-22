@@ -5,7 +5,7 @@ if [ $DISTRO = "ubuntu" ]; then
     alias bat="batcat"
 fi
 
-if [ $TERM = "xterm-kitty" ]; then
+if [ $TERM = "xterm-kitty" ] && [ -z "${DISTROBOX_ENTER_PATH}" ]; then
     alias ssh="kitty +kitten ssh"
 fi
 

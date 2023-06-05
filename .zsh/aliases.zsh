@@ -1,5 +1,6 @@
 alias ll='ls -lh'
 alias la='ls -lAh'
+alias dbox="distrobox"
 
 if [ $DISTRO = "ubuntu" ]; then
     alias bat="batcat"

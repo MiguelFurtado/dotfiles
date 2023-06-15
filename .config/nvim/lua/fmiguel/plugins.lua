@@ -172,15 +172,10 @@ local plugins = {
 
   -- themes
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    config = require'fmiguel.pconfig.catppuccin'.setup,
-    version = "^1",
-  },
-  {
     'EdenEast/nightfox.nvim',
     version = "^3",
   },
+
   'rebelot/kanagawa.nvim',
 
   -- detect system theme (dark/light)

@@ -1,4 +1,3 @@
-vim.o.termguicolors = true
 local dark_theme = 'nightfox'
 local light_theme = 'dawnfox'
 

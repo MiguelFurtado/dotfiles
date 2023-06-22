@@ -5,12 +5,13 @@ local A = vim.api
 local cmd = vim.cmd
 local opt = vim.opt
 g.mapleader = ' '
+vim.o.termguicolors = true
 
 require('fmiguel.plugins').load()
+require('fmiguel.colors')
 local keybinds = require('fmiguel.keybinds')
 keybinds.set_general_keybinds()
 keybinds.set_dap_keybinds()
-require('fmiguel.colors')
 
 o.number = true
 o.relativenumber = true

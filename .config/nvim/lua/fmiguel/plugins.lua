@@ -180,6 +180,13 @@ local plugins = {
 
   -- detect system theme (dark/light)
   'vimpostor/vim-lumen',
+
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require 'colorizer'.setup {'*'}
+    end,
+  },
 }
 
 local opts = {

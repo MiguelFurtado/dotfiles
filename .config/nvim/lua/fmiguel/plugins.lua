@@ -14,99 +14,99 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plenary_dep = {
-  'nvim-lua/plenary.nvim',
+  "nvim-lua/plenary.nvim",
   version = "^0.1.3",
 }
 
 local plugins = {
   {
-    'ahmedkhalf/project.nvim',
-    config = require'fmiguel.pconfig.project'.setup,
+    "ahmedkhalf/project.nvim",
+    config = require"fmiguel.pconfig.project".setup,
   },
 
   -- git support
   {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     version = "0.*",
-    config = require'fmiguel.pconfig.gitsigns'.setup,
+    config = require"fmiguel.pconfig.gitsigns".setup,
   },
 
   -- treesitter provides better syntax highlighting
   {
-    'nvim-treesitter/nvim-treesitter',
-    version = '^0.9',
-    build = ':TSUpdate',
-    config = require'fmiguel.pconfig.treesitter'.setup,
+    "nvim-treesitter/nvim-treesitter",
+    version = "^0.9",
+    build = ":TSUpdate",
+    config = require"fmiguel.pconfig.treesitter".setup,
   },
 
-  'kyazdani42/nvim-web-devicons',
+  "kyazdani42/nvim-web-devicons",
 
   -- Telescope
   {
-    'nvim-telescope/telescope.nvim',
-    version = '^0.1.1',
+    "nvim-telescope/telescope.nvim",
+    version = "^0.1.1",
     dependencies = {
       plenary_dep,
-      {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-      'nvim-telescope/telescope-file-browser.nvim',
+      {"nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-telescope/telescope-file-browser.nvim",
     },
-    config = require'fmiguel.pconfig.telescope'.setup,
+    config = require"fmiguel.pconfig.telescope".setup,
   },
 
   -- Configurations for Nvim LSP, DAP and Linters
   {
-    'williamboman/mason.nvim',
-    version = '^1',
-    config = require'fmiguel.pconfig.mason'.setup,
+    "williamboman/mason.nvim",
+    version = "^1",
+    config = require"fmiguel.pconfig.mason".setup,
   },
 
   -- provides lspconfig compatibility to mason
   {
-    'williamboman/mason-lspconfig.nvim',
+    "williamboman/mason-lspconfig.nvim",
     version = "^0.1",
     dependencies = {
       {
-        'neovim/nvim-lspconfig',
+        "neovim/nvim-lspconfig",
         version = "^0.1",
-        config = require'fmiguel.pconfig.lsp_config'.setup,
+        config = require"fmiguel.pconfig.lsp_config".setup,
       },
     },
   },
 
   {
-    'jayp0521/mason-nvim-dap.nvim',
+    "jayp0521/mason-nvim-dap.nvim",
     version = "^2",
     dependencies = {
-      'mfussenegger/nvim-dap',
+      "mfussenegger/nvim-dap",
       version = "0.*",
     },
-    config = require'fmiguel.pconfig.dap'.setup,
+    config = require"fmiguel.pconfig.dap".setup,
   },
 
   {
-    'rcarriga/nvim-dap-ui',
+    "rcarriga/nvim-dap-ui",
     version = "^3",
     config = function()
-      require'dapui'.setup()
+      require"dapui".setup()
     end,
   },
 
-  'theHamsta/nvim-dap-virtual-text', -- inline values
+  "theHamsta/nvim-dap-virtual-text", -- inline values
 
   -- need this because the mason setup does not include running
   -- delve with args
   {
-    'leoluz/nvim-dap-go',
+    "leoluz/nvim-dap-go",
     ft = "go",
     config = function()
-      require('dap-go').setup()
+      require("dap-go").setup()
     end,
   },
 
   {
-    'j-hui/fidget.nvim', -- feedback while I wait for rust-analyzer
+    "j-hui/fidget.nvim", -- feedback while I wait for rust-analyzer
     config = function()
-      require('fidget').setup()
+      require("fidget").setup()
     end,
   },
 
@@ -116,75 +116,75 @@ local plugins = {
     -- since and the project is very actively maintained so I'll wait till the
     -- next release to specify a version.
     -- TODO use a version on next release
-    'hrsh7th/nvim-cmp', -- the completion engine
-    config = require('fmiguel.pconfig.cmp').setup,
+    "hrsh7th/nvim-cmp", -- the completion engine
+    config = require("fmiguel.pconfig.cmp").setup,
     dependencies = {
       {
-        'L3MON4D3/LuaSnip',
+        "L3MON4D3/LuaSnip",
         version = "^1",
       }, -- snippets engine
-      'saadparwaiz1/cmp_luasnip', -- the luasnip driver for cmp
-      'hrsh7th/cmp-buffer', -- words from the curr buffer
-      'hrsh7th/cmp-path', -- path auto-completion
-      'hrsh7th/cmp-nvim-lua', -- nvim lua api
-      'hrsh7th/cmp-nvim-lsp',
-      'rafamadriz/friendly-snippets', -- a bunch of preconfigured snippets for various languages
+      "saadparwaiz1/cmp_luasnip", -- the luasnip driver for cmp
+      "hrsh7th/cmp-buffer", -- words from the curr buffer
+      "hrsh7th/cmp-path", -- path auto-completion
+      "hrsh7th/cmp-nvim-lua", -- nvim lua api
+      "hrsh7th/cmp-nvim-lsp",
+      "rafamadriz/friendly-snippets", -- a bunch of preconfigured snippets for various languages
     },
   },
 
   {
-    'windwp/nvim-autopairs', -- auto-close pairs
-    config = require'fmiguel.pconfig.autopairs'.setup,
+    "windwp/nvim-autopairs", -- auto-close pairs
+    config = require"fmiguel.pconfig.autopairs".setup,
   },
 
   {
-    'nvim-lualine/lualine.nvim',
-    config = require'fmiguel.pconfig.lualine'.setup,
+    "nvim-lualine/lualine.nvim",
+    config = require"fmiguel.pconfig.lualine".setup,
   },
 
   -- proper tabs
   {
-    'akinsho/bufferline.nvim',
-    version = '^4',
-    event = {'BufEnter'},
-    config = require('fmiguel.pconfig.bufferline').setup,
+    "akinsho/bufferline.nvim",
+    version = "^4",
+    event = {"BufEnter"},
+    config = require("fmiguel.pconfig.bufferline").setup,
   },
 
   {
-    'saecki/crates.nvim',
-    version = '^0.3',
+    "saecki/crates.nvim",
+    version = "^0.3",
     dependencies = { planary_dep },
-    event = { 'BufRead Cargo.toml' },
+    event = { "BufRead Cargo.toml" },
     config = function()
-      require('crates').setup()
+      require("crates").setup()
     end,
   },
 
   -- netrw icons
   {
-    'prichrd/netrw.nvim',
+    "prichrd/netrw.nvim",
     config = function()
-      require'netrw'.setup()
+      require"netrw".setup()
     end,
   },
 
-  'ThePrimeagen/harpoon',
+  "ThePrimeagen/harpoon",
 
   -- themes
   {
-    'EdenEast/nightfox.nvim',
+    "EdenEast/nightfox.nvim",
     version = "^3",
   },
 
-  'rebelot/kanagawa.nvim',
+  "rebelot/kanagawa.nvim",
 
-  -- detect system theme (dark/light)
-  'vimpostor/vim-lumen',
+  -- detects system theme changes (dark/light)
+  "vimpostor/vim-lumen",
 
   {
-    'norcalli/nvim-colorizer.lua',
+    "norcalli/nvim-colorizer.lua",
     config = function()
-      require 'colorizer'.setup {'*'}
+      require "colorizer".setup {"*"}
     end,
   },
 }

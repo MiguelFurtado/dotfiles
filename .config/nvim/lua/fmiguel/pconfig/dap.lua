@@ -7,7 +7,7 @@ function M.setup()
     "delve", -- golang
   }
 
-  local dap = require'mason-nvim-dap'
+  local dap = require"mason-nvim-dap"
   dap.setup {
     ensure_installed = dap_servers,
     automatic_setup = true,

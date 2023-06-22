@@ -1,8 +1,8 @@
 local M = {}
 
 function M.setup()
-  require'nvim-treesitter.configs'.setup {
-    ensure_installed = 'all',
+  require"nvim-treesitter.configs".setup {
+    ensure_installed = "all",
     sync_install = false,
     auto_install = true,
     highlight = {
@@ -13,3 +13,4 @@ function M.setup()
 end
 
 return M
+

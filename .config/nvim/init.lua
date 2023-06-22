@@ -1,11 +1,23 @@
-local o = vim.o
-local wo = vim.wo
-local g = vim.g
-local A = vim.api
-local cmd = vim.cmd
-local opt = vim.opt
-g.mapleader = ' '
+vim.g.mapleader = ' '
 vim.o.termguicolors = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.cul = true -- highlight current line
+vim.o.hlsearch=false
+vim.wo.wrap = false
+vim.o.spell = false
+vim.o.mouse = 'a' --enable mouse cursor
+vim.o.guicursor = "i:block"
+vim.opt.showmode = false -- hide default mode indicator because I'm using lualine
+vim.opt.laststatus = 3 -- global status line
+vim.opt.swapfile = false
+vim.o.encoding = 'UTF-8'
+
+-- tabs and indentation
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = true
 
 require('fmiguel.plugins').load()
 require('fmiguel.colors')
@@ -13,36 +25,14 @@ local keybinds = require('fmiguel.keybinds')
 keybinds.set_general_keybinds()
 keybinds.set_dap_keybinds()
 
-o.number = true
-o.relativenumber = true
-o.cul = true -- highlight current line
-o.hlsearch=false
-wo.wrap = false
-o.spell = false
-o.mouse = 'a' --enable mouse cursor
-o.guicursor = "i:block"
--- hide default mode indicator because I'm using lualine
-opt.showmode = false
--- global status line
-opt.laststatus = 3
-opt.swapfile = false
-
--- tabs and indentation
-o.tabstop = 4
-o.shiftwidth = 4
-o.expandtab = true
-o.smartindent = true
-
-o.encoding = 'UTF-8'
-
 -- remove trailing spaces on save so I can sleep well at night
-A.nvim_create_autocmd({'BufWritePre'}, {
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
   pattern = {'*'},
   command = [[%s/\s\+$//e]],
 })
 
 -- Highlight yanked region
-A.nvim_create_autocmd({'TextYankPost'}, {
+vim.api.nvim_create_autocmd({'TextYankPost'}, {
   pattern = {'*'},
   callback = function()
     vim.highlight.on_yank {

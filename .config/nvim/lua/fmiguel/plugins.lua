@@ -105,6 +105,7 @@ local plugins = {
 
   {
     "j-hui/fidget.nvim", -- feedback while I wait for rust-analyzer
+    tag = "legacy", -- don't break because plugin is being reworked
     config = function()
       require("fidget").setup()
     end,

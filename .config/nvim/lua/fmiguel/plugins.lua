@@ -18,6 +18,8 @@ local plenary_dep = {
   version = "^0.1.3",
 }
 
+local devicons_dep = "kyazdani42/nvim-web-devicons"
+
 local plugins = {
   {
     "ahmedkhalf/project.nvim",
@@ -31,26 +33,26 @@ local plugins = {
     config = require"fmiguel.pconfig.gitsigns".setup,
   },
 
-  -- treesitter provides better syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     version = "^0.9",
     build = ":TSUpdate",
     config = require"fmiguel.pconfig.treesitter".setup,
+    event = "BufRead",
   },
-
-  "kyazdani42/nvim-web-devicons",
 
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
     version = "^0.1.1",
+    config = require"fmiguel.pconfig.telescope".setup,
+    keys = require"fmiguel.keybinds".telescope_keybinds,
     dependencies = {
       plenary_dep,
+      devicons_dep,
       {"nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-telescope/telescope-file-browser.nvim",
     },
-    config = require"fmiguel.pconfig.telescope".setup,
   },
 
   -- Configurations for Nvim LSP, DAP and Linters
@@ -58,47 +60,46 @@ local plugins = {
     "williamboman/mason.nvim",
     version = "^1",
     config = require"fmiguel.pconfig.mason".setup,
-  },
-
-  -- provides lspconfig compatibility to mason
-  {
-    "williamboman/mason-lspconfig.nvim",
-    version = "^0.1",
+    ft = require"fmiguel.pconfig.mason".ft,
+    event = "CmdUndefined Mason",
     dependencies = {
+      -- provides lspconfig compatibility to mason
       {
-        "neovim/nvim-lspconfig",
+        "williamboman/mason-lspconfig.nvim",
         version = "^0.1",
+        dependencies = {
+          {
+            "neovim/nvim-lspconfig",
+            version = "^0.1",
+          },
+        },
+      },
+      {
+        "jayp0521/mason-nvim-dap.nvim",
+        version = "^2",
+        dependencies = {
+          "mfussenegger/nvim-dap",
+          version = "0.*",
+        },
+      },
+      {
+        "rcarriga/nvim-dap-ui",
+        version = "^3",
+        config = function()
+          require"dapui".setup()
+        end,
+      },
+      "theHamsta/nvim-dap-virtual-text", -- inline values
+      -- need this because the mason setup does not include running
+      -- delve with args
+      {
+        "leoluz/nvim-dap-go",
+        ft = "go",
+        config = function()
+          require("dap-go").setup()
+        end,
       },
     },
-  },
-
-  {
-    "jayp0521/mason-nvim-dap.nvim",
-    version = "^2",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      version = "0.*",
-    },
-  },
-
-  {
-    "rcarriga/nvim-dap-ui",
-    version = "^3",
-    config = function()
-      require"dapui".setup()
-    end,
-  },
-
-  "theHamsta/nvim-dap-virtual-text", -- inline values
-
-  -- need this because the mason setup does not include running
-  -- delve with args
-  {
-    "leoluz/nvim-dap-go",
-    ft = "go",
-    config = function()
-      require("dap-go").setup()
-    end,
   },
 
   {
@@ -107,6 +108,7 @@ local plugins = {
     config = function()
       require("fidget").setup()
     end,
+    event = "LspAttach",
   },
 
   -- lsp auto-completion
@@ -117,6 +119,7 @@ local plugins = {
     -- TODO use a version on next release
     "hrsh7th/nvim-cmp", -- the completion engine
     config = require("fmiguel.pconfig.cmp").setup,
+    event = "InsertEnter",
     dependencies = {
       {
         "L3MON4D3/LuaSnip",
@@ -134,19 +137,25 @@ local plugins = {
   {
     "windwp/nvim-autopairs", -- auto-close pairs
     config = require"fmiguel.pconfig.autopairs".setup,
+    event = "InsertEnter",
   },
 
   {
     "nvim-lualine/lualine.nvim",
     config = require"fmiguel.pconfig.lualine".setup,
+    dependencies = {
+      devicons_dep,
+    }
   },
 
   -- proper tabs
   {
     "akinsho/bufferline.nvim",
     version = "^4",
-    event = {"BufEnter"},
     config = require("fmiguel.pconfig.bufferline").setup,
+    dependencies = {
+      devicons_dep,
+    }
   },
 
   {
@@ -165,6 +174,7 @@ local plugins = {
     config = function()
       require"netrw".setup()
     end,
+    ft = "netrw"
   },
 
   "ThePrimeagen/harpoon",
@@ -183,6 +193,7 @@ local plugins = {
     config = function()
       require "colorizer".setup {"*"}
     end,
+    event = "BufRead",
   },
 }
 

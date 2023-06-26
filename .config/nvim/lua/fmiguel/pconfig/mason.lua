@@ -1,5 +1,3 @@
-local M = {}
-
 local lsp_servers = {
   "rust_analyzer",
   "gopls",
@@ -17,7 +15,19 @@ local dap_servers = {
   "delve", -- golang
 }
 
-function M.setup()
+local ft = {
+  "rust",
+  "go",
+  "python",
+  "dockerfile",
+  "html",
+  "css",
+  "javascript",
+  "typescript",
+  "json",
+}
+
+function setup()
   require"mason".setup {
       PATH = "prepend",
   }
@@ -50,5 +60,6 @@ function setup_dap(servers)
     automatic_setup = true,
   }
 end
-return M
+
+return {ft = ft, setup = setup}
 

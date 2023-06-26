@@ -177,8 +177,6 @@ local plugins = {
     version = "^3",
   },
 
-  "rebelot/kanagawa.nvim",
-
   -- detects system theme changes (dark/light)
   "vimpostor/vim-lumen",
 

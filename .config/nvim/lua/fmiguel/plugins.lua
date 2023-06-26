@@ -68,7 +68,6 @@ local plugins = {
       {
         "neovim/nvim-lspconfig",
         version = "^0.1",
-        config = require"fmiguel.pconfig.lsp_config".setup,
       },
     },
   },
@@ -80,7 +79,6 @@ local plugins = {
       "mfussenegger/nvim-dap",
       version = "0.*",
     },
-    config = require"fmiguel.pconfig.dap".setup,
   },
 
   {

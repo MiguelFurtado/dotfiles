@@ -22,6 +22,11 @@ local devicons_dep = "kyazdani42/nvim-web-devicons"
 
 local plugins = {
   {
+    "folke/lazy.nvim",
+    version = "^9",
+  },
+
+  {
     "ahmedkhalf/project.nvim",
     config = require"fmiguel.pconfig.project".setup,
   },

@@ -148,16 +148,6 @@ local plugins = {
     }
   },
 
-  -- proper tabs
-  {
-    "akinsho/bufferline.nvim",
-    version = "^4",
-    config = require("fmiguel.pconfig.bufferline").setup,
-    dependencies = {
-      devicons_dep,
-    }
-  },
-
   {
     "saecki/crates.nvim",
     version = "^0.3",

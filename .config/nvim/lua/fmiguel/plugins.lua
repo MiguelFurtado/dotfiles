@@ -56,7 +56,6 @@ local plugins = {
       plenary_dep,
       devicons_dep,
       {"nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      "nvim-telescope/telescope-file-browser.nvim",
     },
   },
 

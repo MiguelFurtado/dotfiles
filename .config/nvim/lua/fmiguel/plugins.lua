@@ -179,9 +179,6 @@ local plugins = {
     version = "^3",
   },
 
-  -- detects system theme changes (dark/light)
-  "vimpostor/vim-lumen",
-
   {
     "norcalli/nvim-colorizer.lua",
     config = function()

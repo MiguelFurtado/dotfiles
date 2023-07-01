@@ -26,6 +26,7 @@ function M.set_general_keybinds()
 
   nmap("<leader>w", "<cmd>lua vim.cmd('w')<CR>")
   nmap("<leader>ee", "<cmd>lua vim.diagnostic.open_float()<CR>")
+  nmap("<leader>E", "<cmd>lua vim.cmd('Ex')<CR>")
 
   nmap("<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
   nmap("<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>")

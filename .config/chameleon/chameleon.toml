@@ -13,3 +13,6 @@ name = "alacritty"
 light = "Alabaster"
 dark = "Campbell"
 
+[[targets]]
+# specify the neovim theme in the neovim config
+name = "neovim"

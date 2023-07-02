@@ -14,11 +14,11 @@ function M.setup()
     patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
 
     -- Show hidden files in telescope
-    show_hidden = false,
+    show_hidden = true,
 
     -- When set to false, you will get a message when project.nvim changes your
     -- directory.
-    silent_chdir = false,
+    silent_chdir = true,
 
     -- Path where project.nvim will store the project history for use in
     -- telescope

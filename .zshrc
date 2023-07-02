@@ -37,12 +37,13 @@ bindkey -v
 
 . ~/.zsh/completion.zsh
 
-# starship prompt
-eval "$(starship init zsh)"
-
 if [ "$DISTRO" = "ubuntu" ]; then
     # Get ubuntu suggestions on the package to install to provide a command which
     # was not found
     . /etc/zsh_command_not_found
 fi
 
+# starship prompt
+eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh)"

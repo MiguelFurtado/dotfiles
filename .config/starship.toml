@@ -1,5 +1,6 @@
 add_newline = false
 format = """
+$container\
 $directory\
 $git_branch\
 $git_commit\
@@ -9,7 +10,6 @@ $git_status\
 $sudo\
 $line_break\
 $status\
-$container\
 $character\
 """
 
@@ -24,3 +24,6 @@ truncation_length = 1
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[container]
+format = '[$symbol]($style) '

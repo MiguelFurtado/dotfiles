@@ -7,3 +7,6 @@ bold = true
 
 [style.command_name]
 foreground = "red"
+
+[updates]
+auto_update = true

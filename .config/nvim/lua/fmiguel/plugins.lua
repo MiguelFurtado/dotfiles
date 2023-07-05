@@ -34,13 +34,13 @@ local plugins = {
   -- git support
   {
     "lewis6991/gitsigns.nvim",
-    version = "0.*",
+    version = "0.x.x",
     config = require"fmiguel.pconfig.gitsigns".setup,
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    version = "^0.9",
+    version = "0.x.x",
     build = ":TSUpdate",
     config = require"fmiguel.pconfig.treesitter".setup,
     event = "BufRead",
@@ -49,7 +49,7 @@ local plugins = {
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
-    version = "^0.1.1",
+    version = "0.x.x",
     config = require"fmiguel.pconfig.telescope".setup,
     keys = require"fmiguel.keybinds".telescope_keybinds,
     dependencies = {
@@ -70,11 +70,11 @@ local plugins = {
       -- provides lspconfig compatibility to mason
       {
         "williamboman/mason-lspconfig.nvim",
-        version = "^0.1",
+        version = "0.x.x",
         dependencies = {
           {
             "neovim/nvim-lspconfig",
-            version = "^0.1",
+            version = "0.x.x",
           },
         },
       },
@@ -83,7 +83,7 @@ local plugins = {
         version = "^2",
         dependencies = {
           "mfussenegger/nvim-dap",
-          version = "0.*",
+          version = "0.x.x",
         },
       },
       {

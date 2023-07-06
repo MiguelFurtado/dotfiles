@@ -31,7 +31,20 @@ local plugins = {
     config = require"fmiguel.pconfig.project".setup,
   },
 
-  -- git support
+  {
+    "folke/noice.nvim",
+    version = "^1",
+    event = "VeryLazy",
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      {
+        "MunifTanjim/nui.nvim",
+        version = "0.x.x"
+      },
+    },
+    config = require"fmiguel.pconfig.noice".setup,
+  },
+
   {
     "lewis6991/gitsigns.nvim",
     version = "0.x.x",

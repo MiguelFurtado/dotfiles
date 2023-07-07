@@ -18,11 +18,12 @@ scrolling:
   # Specifying '0' will disable scrolling.
   history: 10000
 
+draw_bold_text_with_bright_colors: true
 # Font configuration
 font:
   normal:
-    family: Fira Code
-  size: 14.0
+    family: Fira Mono Nerd Font
+  size: 14.5
 
 cursor:
   style:
@@ -32,30 +33,30 @@ cursor:
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
 colors:
-  name: Default (dark)
-  author: Chris Kempson
+  # Default colors
   primary:
-    background: "#151515"
-    foreground: "#d0d0d0"
-  cursor:
-    text: "#151515"
-    cursor: "#d0d0d0"
+    background: '#161616'
+    foreground: '#ffffff'
+
+  # Normal colors
   normal:
-    black: "#151515"
-    red: "#ac4142"
-    green: "#90a959"
-    yellow: "#f4bf75"
-    blue: "#6a9fb5"
-    magenta: "#aa759f"
-    cyan: "#75b5aa"
-    white: "#d0d0d0"
+    black: '#0c0c0c'
+    red: '#c50f1f'
+    green: '#13a10e'
+    yellow: '#c19c00'
+    blue: '#0037da'
+    magenta: '#881798'
+    cyan: '#3a96dd'
+    white: '#cccccc'
+
+  # Bright colors
   bright:
-    black: "#505050"
-    red: "#ac4142"
-    green: "#90a959"
-    yellow: "#f4bf75"
-    blue: "#6a9fb5"
-    magenta: "#aa759f"
-    cyan: "#75b5aa"
-    white: "#f5f5f5"
-theme: Default.dark
+    black: '#767676'
+    red: '#e74856'
+    green: '#16c60c'
+    yellow: '#f9f1a5'
+    blue: '#3b78ff'
+    magenta: '#b4009e'
+    cyan: '#61d6d6'
+    white: '#f2f2f2'
+theme: custom_dark

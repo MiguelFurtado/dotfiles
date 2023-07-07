@@ -1,7 +1,7 @@
 [[targets]]
 name = "kitty"
-light = "Alabaster"
-dark = "Mathias"
+light = "Custom Light"
+dark = "Custom Dark"
 
 [[targets]]
 name = "bat"

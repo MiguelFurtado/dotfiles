@@ -28,7 +28,15 @@ local plugins = {
 
   {
     "ahmedkhalf/project.nvim",
-    config = require"fmiguel.pconfig.project".setup,
+    config = function()
+      require("project_nvim").setup {
+        -- order matters as latter ones are used as fallback
+        detection_methods = { "lsp", "pattern" },
+        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+        -- Show hidden files in telescope
+        show_hidden = true,
+      }
+    end,
   },
 
   {
@@ -48,15 +56,35 @@ local plugins = {
   {
     "lewis6991/gitsigns.nvim",
     version = "0.x.x",
-    config = require"fmiguel.pconfig.gitsigns".setup,
+    config = function()
+      require"gitsigns".setup {
+        signs = {
+          add = { text = "+" },
+          change = { text = "~" },
+          delete = { text = "_" },
+          topdelete = { text = "‾" },
+          changedelete = { text = "~" },
+        },
+      }
+    end,
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
     version = "0.x.x",
     build = ":TSUpdate",
-    config = require"fmiguel.pconfig.treesitter".setup,
     event = "BufRead",
+    config = function()
+      require"nvim-treesitter.configs".setup {
+        ensure_installed = "all",
+        sync_install = false,
+        auto_install = true,
+        highlight = {
+          enable = true,
+        },
+        additional_vim_regex_highlighting = false,
+      }
+    end,
   },
 
   -- Telescope
@@ -166,10 +194,24 @@ local plugins = {
 
   {
     "nvim-lualine/lualine.nvim",
-    config = require"fmiguel.pconfig.lualine".setup,
     dependencies = {
       devicons_dep,
-    }
+    },
+    config = function()
+      require"lualine".setup {
+        options = {
+          globalstatus = true,
+        },
+        sections = {
+          lualine_a = {"mode"},
+          lualine_b = {"branch", "diff", "diagnostics"},
+          lualine_c = {{"filename", path = 1}},
+          lualine_x = {"filetype"},
+          lualine_y = {"progress"},
+          lualine_z = {"location"}
+        },
+      }
+    end,
   },
 
   {

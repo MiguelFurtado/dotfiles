@@ -27,11 +27,7 @@ choose_theme()
 
 vim.api.nvim_create_autocmd("OptionSet", {
   pattern = {"background"},
-  callback = function()
-    choose_theme()
-    -- Need to reset these plugins so colors don't look weird
-    require"fmiguel.pconfig.lualine".setup()
-  end
+  callback = choose_theme,
 })
 
 

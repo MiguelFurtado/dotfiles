@@ -6,3 +6,6 @@
 .sync_*.db
 .sync_*.db-wal
 .sync_*.db-shm
+
+.zsh/zsh-autosuggestions/
+

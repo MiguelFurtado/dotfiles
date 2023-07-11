@@ -24,7 +24,7 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt share_history          # share command history data betwenn sessions
 
 # Enable zsh-autosuggestions
-auto_sugg_path="~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+auto_sugg_path="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 if [ -f $auto_sugg_path ]; then
     source $auto_sugg_path
 fi

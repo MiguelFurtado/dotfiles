@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
     require"noice".setup {
     cmdline = {
-      view = "cmdline", -- classic command line at bottom
+      -- view = "cmdline", -- classic command line at bottom
     },
     messages = {
       -- NOTE: If you enable messages, then the cmdline is enabled automatically.
@@ -21,7 +21,8 @@ function M.setup()
     lsp = {
       progress = {
         -- keeping fidget because its more discret
-        enabled = false,
+        enabled = true,
+        view = "mini",
       },
 
       hover = {
@@ -34,6 +35,15 @@ function M.setup()
         -- Messages shown by lsp servers
         enabled = false,
       },
+    },
+    views = {
+      mini = {
+        size = {
+          height = "auto",
+          max_height = 1,
+          width = "auto",
+        }
+      }
     },
   }
 end

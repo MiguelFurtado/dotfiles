@@ -147,15 +147,6 @@ local plugins = {
     },
   },
 
-  {
-    "j-hui/fidget.nvim", -- feedback while I wait for rust-analyzer
-    tag = "legacy", -- don't break because plugin is being reworked
-    config = function()
-      require("fidget").setup()
-    end,
-    event = "LspAttach",
-  },
-
   -- lsp auto-completion
   {
     -- the latest release is from August 2022 but there were a lot of commits

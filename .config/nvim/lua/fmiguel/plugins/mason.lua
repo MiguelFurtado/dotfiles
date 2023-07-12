@@ -61,5 +61,52 @@ function setup_dap(servers)
   }
 end
 
-return {ft = ft, setup = setup}
+return {
+  -- Configurations for Nvim LSP, DAP and Linters
+  {
+    "williamboman/mason.nvim",
+    version = "^1",
+    config = setup,
+    ft = ft,
+    event = "CmdUndefined Mason",
+    dependencies = {
+      -- provides lspconfig compatibility to mason
+      {
+        "williamboman/mason-lspconfig.nvim",
+        version = "0.x.x",
+        dependencies = {
+          {
+            "neovim/nvim-lspconfig",
+            version = "0.x.x",
+          },
+        },
+      },
+      {
+        "jayp0521/mason-nvim-dap.nvim",
+        version = "^2",
+        dependencies = {
+          "mfussenegger/nvim-dap",
+          version = "0.x.x",
+        },
+      },
+      {
+        "rcarriga/nvim-dap-ui",
+        version = "^3",
+        config = function()
+          require"dapui".setup()
+        end,
+      },
+      "theHamsta/nvim-dap-virtual-text", -- inline values
+      -- need this because the mason setup does not include running
+      -- delve with args
+      {
+        "leoluz/nvim-dap-go",
+        ft = "go",
+        config = function()
+          require("dap-go").setup()
+        end,
+      },
+    },
+  },
+}
 

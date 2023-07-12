@@ -1,6 +1,4 @@
-local M = {}
-
-function M.setup()
+function setup()
     require"noice".setup {
     cmdline = {
       -- view = "cmdline", -- classic command line at bottom
@@ -48,4 +46,19 @@ function M.setup()
   }
 end
 
-return M
+return {
+  {
+    "folke/noice.nvim",
+    version = "^1",
+    event = "VeryLazy",
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      {
+        "MunifTanjim/nui.nvim",
+        version = "0.x.x"
+      },
+    },
+    config = setup,
+  },
+}
+

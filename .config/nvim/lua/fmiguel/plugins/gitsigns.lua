@@ -2,16 +2,15 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     version = "0.x.x",
-    config = function()
-      require"gitsigns".setup {
-        signs = {
-          add = { text = "+" },
-          change = { text = "~" },
-          delete = { text = "_" },
-          topdelete = { text = "‾" },
-          changedelete = { text = "~" },
-        },
-      }
-    end,
+    config = {
+      signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+      },
+    }
   },
 }
+

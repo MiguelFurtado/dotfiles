@@ -1,7 +1,13 @@
 config = {
+  presets = {
+    bottom_search = true,
+    long_message_to_split = true,
+  },
+
   cmdline = {
     -- view = "cmdline", -- classic command line at bottom
   },
+
   messages = {
     -- NOTE: If you enable messages, then the cmdline is enabled automatically.
     -- This is a current Neovim limitation.
@@ -12,9 +18,29 @@ config = {
     view_history = "messages", -- view for :messages
     view_search = "mini", -- view for search count messages. Set to `false` to disable
   },
+
   notify = {
     view = "mini",
   },
+
+  routes = {
+    -- show code actions in normal messasge view
+    {
+      filter = {
+        event = "msg_show",
+        kind = "",
+        find = "Code actions",
+      },
+      view = "messages",
+    },
+    -- show macro @recording messages
+    {
+      filter = { event = "msg_showmode" },
+      view = "mini",
+    },
+  },
+
+
   lsp = {
     progress = {
       -- keeping fidget because its more discret
@@ -33,6 +59,7 @@ config = {
       enabled = false,
     },
   },
+
   views = {
     mini = {
       size = {

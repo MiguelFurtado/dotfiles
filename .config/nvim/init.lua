@@ -12,6 +12,7 @@ vim.opt.showmode = false -- hide default mode indicator because I'm using lualin
 vim.opt.swapfile = false
 vim.o.encoding = "UTF-8"
 vim.opt.scrolloff = 8
+vim.g.netrw_banner = 0
 
 -- tabs and indentation
 vim.o.tabstop = 4

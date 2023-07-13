@@ -4,6 +4,8 @@ return {
     config = {
         options = {
           globalstatus = true,
+          component_separators = "|",
+          section_separators = "",
         },
         sections = {
           lualine_a = {"mode"},
